@@ -8,7 +8,8 @@
 :root{
     --blanco: #eee;
     --negro: #2F3237;
-    --negroS2: #0C121C; 
+    --negroS2: #0C121C;
+    --verdeS1 : #007A49; 
     --averiaSansLibre: 'Averia Sans Libre';
 }
 
@@ -161,4 +162,39 @@ footer{
     margin-right: 20px;
 }
 
+/* Main*/
+
+
+/* Card*/
+.contenedorPrincipal{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    }
+
+.card{
+    width: 250px;
+    height: 200px;
+    border-radius: 100px;
+    margin: 10px;
+}
+.imgCard{
+    width: 100%;
+    height: 80%;
+    background-color: gray;
+    border-radius: 0px, 100px;
+}
+
+.subCard{
+    width: 100%;
+    height: 20%;
+    background-color: var(--verdeS1);
+}
+
+.imgCard img{
+    width: 100%;
+    height: 100%;
+    border-end-radius: 20px;
+}
 
