@@ -26,14 +26,19 @@ header{
     flex-direction: row ;
     justify-content: space-between;
     width: 100%;
-    height: 80px;
+    height: 100px;
     border-bottom: #0C121C 2px solid;
     align-items: center;
 }
 
 .menuYlogo{
     width: 33%;
-    align-items: flex-start;
+    display: flex;
+    align-items: center;
+    
+    flex-direction: row;
+    margin-left: 10px;
+    
 }
 
 .menuHamburguesa{
@@ -41,6 +46,14 @@ header{
     width: 8%;
     height: 5%;
     padding-left: 10px;
+    margin-right: 5px;
+}
+.logoTresEstrellas{
+    width: 25%;
+    height: 8%;
+    margin-bottom: 10px;
+    margin-left: 20px;
+
 }
 
 .buscador{
@@ -52,8 +65,8 @@ header{
 
 .inputBuscar{
     background-color: var(--blanco);
-    width: 80%;
-    height: 25px;
+    width: 360px;
+    height: 45px;
     border-radius: 50px;
     padding-left: 20px;
 }
@@ -64,10 +77,11 @@ header{
     justify-content: right;
     align-items: center;
     width: 33%;
+    margin-right: 15px;
 }
 .contenedorPerfil{
-    width: 5%;
-    height: 50%;
+    width: 50px;
+    height: 50px;
     margin-left: 15px;
 }
 .fotoPerfil{
