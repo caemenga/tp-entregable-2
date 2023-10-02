@@ -1,16 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@300&family=Gloock&display=swap');
+
 *{
     margin: 0px;
     padding: 0px;
 }
-.font{
-    font-family: sans-serif;
+/* Variables*/
+:root{
+    --blanco: #eee;
+    --negro: #2F3237;
+    --averiaSansLibre: 'Averia Sans Libre';
 }
+
 body{
-    background-color: #2F3237;
+    background-color:var(--negro);
 }
 
 h3{
-    color: #eeeeee;
+    color: var(--blanco);
+    font-family: var(--averiaSansLibre);
+    
 }
 /* Header */
 header{
@@ -18,9 +26,36 @@ header{
     flex-direction: row ;
     justify-content: space-between;
     width: 100%;
-    height: 15%;
-    border-bottom: #0C121C 1px solid;
+    height: 80px;
+    border-bottom: #0C121C 2px solid;
     align-items: center;
+}
+
+.menuYlogo{
+    width: 33%;
+    align-items: flex-start;
+}
+
+.menuHamburguesa{
+    color: solid var(--blanco);
+    width: 8%;
+    height: 5%;
+    padding-left: 10px;
+}
+
+.buscador{
+    align-items: center;
+    margin: 0 auto;
+    width: 33%;
+    
+}
+
+.inputBuscar{
+    background-color: var(--blanco);
+    width: 80%;
+    height: 25px;
+    border-radius: 50px;
+    padding-left: 20px;
 }
 
 .usuario{
@@ -28,22 +63,20 @@ header{
     flex-direction: row;
     justify-content: right;
     align-items: center;
+    width: 33%;
 }
-
-.menu{
-    color: solid white;
-    width: 35px;
-    height: 35px;
-    padding-left: 10px;
-}
-.imgPerfil{
+.contenedorPerfil{
     width: 5%;
     height: 50%;
-    margin-left: 20px;
+    margin-left: 15px;
 }
-
-.fotoUser{
+.fotoPerfil{
     width: 100%;
     height: 100%;
     border-radius: 50%;
 }
+
+
+
+
+
