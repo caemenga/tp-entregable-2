@@ -5,7 +5,7 @@
 body{
     background-color: #2F3237;
 }
-
+/* Header */
 header{
     display: flex;
     flex-direction: row ;
@@ -13,4 +13,14 @@ header{
     width: 100%;
     height: 15%;
     border-bottom: #0C121C 1px solid;
+}
+
+.usuario{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu{
+    color: white;
 }
