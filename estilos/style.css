@@ -28,6 +28,7 @@ h2{
     font-family: var(--averiaSansLibre);
     color: var(--blanco);
     font-size: 24px;
+    
 }
 
 h3{
@@ -36,9 +37,14 @@ h3{
     font-size: 20px;
     
 }
+h4{
+    color: var(--blanco);
+    font-family: var(--averiaSansLibre);
+}
 .textoChico{
     font-family: arial;
     color: var(--blanco);
+    font-size: 10px;
 }
 /* Header */
 header{
@@ -75,12 +81,7 @@ header{
     margin-left: 20px;
     
 }
-.logoTresEstrellasFooter{
-    width: 25% ;
-    height: 8% auto;
-    
-    
-}
+
 
 .buscador{
     align-items: center;
@@ -123,7 +124,7 @@ footer{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 500px;
+    height: 400px;
     align-items: center;
     justify-content: space-around;
 }
@@ -132,10 +133,19 @@ footer{
     width: 33%;
     height: 50px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     margin: 0 auto;
 
+}
+
+.logoTresEstrellasFooter{
+    width: 25% ;
+    height: 8% auto;    
+}
+.tresEstrellasFooter{
+    margin-left: 30px;
 }
 
 
@@ -149,7 +159,7 @@ footer{
     margin: 20px;
 }
 
-.links div h3{
+.links div h4{
     margin: 6px;
 }
 .iconos{
@@ -157,8 +167,8 @@ footer{
     justify-content: space-between;
 }
 .iconoRedes{
-    width: 43px;
-    height: 43px;
+    width: 35px;
+    height: 35px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -168,9 +178,13 @@ footer{
 /*Carrusel*/
 .carrusel{
 width: 80%;
-height: 250px;
-background-color: blueviolet;
+height: 280px;
+background-color: var(--negro);
 float: right;
+overflow: hidden;
+}
+.tituloCarrusel{
+    margin-bottom: -8px;
 }
 
 .contenedorPrincipal{
@@ -178,16 +192,16 @@ float: right;
     display: flex;
     flex-direction: row;
     margin: 20px;
-    background-color: antiquewhite;
+    background-color: var(--negro);
     transition: all .5s ease;
     transform : translateX(0%)
     
     }
 /* Card*/
 .card{
-    width: calc(100%/7);
-    height: 200px;
-    margin: 10px;
+    width: calc(100%/8);
+    height: 180px;
+    margin: 3px;
 }
 .imgCard{
     width: 100%;
