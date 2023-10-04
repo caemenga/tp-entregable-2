@@ -1,4 +1,14 @@
 
+/* Variables*/
+:root{
+    --blanco: #eee;
+    --negro: #2F3237;
+    --negroS2: #0C121C;
+    --verdeS1 : #007A49;
+    --verdeL1 : #2AA674; 
+    --averiaSansLibre: 'Averia Sans Libre';
+}
+
 .main{
     padding-top: none;
 }
@@ -9,14 +19,14 @@
 }
 .contenedorJuego{
     width: 100%;
-    height: 300px;
+    height: 600px;
     float: right;
     display: flex;
     flex-direction: column;
 }
 .juegoYcontroles{
     width: 100%;
-    height: 250px;
+    height: 350px;
     background-color: wheat;
     display: flex;
     justify-content: end;
@@ -30,5 +40,37 @@
     width: 80%;
     height: auto;
     
+}
+
+.informacionJuego{
+    width: 100%;
+    height: 250px;
+    background-color: var(--negro);
+    display: flex;
+    flex-direction: column;
+    justify-content: safe;
+    align-items: center;
+}
+
+.imagenesJuego{
+    width: 100%;
+    height: 55%;
+    background-color: brown;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.imgJuego{
+    width: calc(100%/8);
+    height: 100%;
+    background-color: aqua;
+    margin: 5px;
+}
+
+.textoJuego{
+    width: 50%;
+    height: 30%;
+    background-color: beige;
 }
 
