@@ -137,15 +137,21 @@ header{
     width: 15%;
     height: 30px;
     margin-left: 10%;
-    border-radius: 10px;
+    border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--acento);
+    position: relative; 
+    left: 100px; 
+
 }
-.carrito a{
+
+.carritoLetra{
     text-decoration: none;
+    color: white;
     font-size: 20px
+    
 }
 
 
@@ -207,8 +213,7 @@ footer{
 }
 
 /* Main*/
-.main{
-    padding-top: 100px;
+.main{ 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,7 +222,7 @@ footer{
 /*Carrusel*/
 .carrusel{
 width: 80%;
-height: 290px;
+height: 350px;
 background-color: var(--negro);
 margin-top: 15px;
 
@@ -250,18 +255,22 @@ overflow: hidden;
         width: 40px;
         height: 40px;
         float: inline-start;
+ 
     }
     .arrowRigth:hover{
-        transform: scale(1.3);
+        transform: scale(1.1);
+        overflow: visible;
     }
     
     .arrowLeft{
         width: 40px;
         height: 40px;
         float: inline-start;
+
     }
     .arrowLeft:hover{
-        transform: scale(1.3);
+        transform: scale(1.1);
+        overflow: visible;
     }
 /* Card*/
 .card{
@@ -297,12 +306,14 @@ overflow: hidden;
 }
 .contenedorImgCard:hover .tituloJuego{
     opacity:1;
-    
 }
+
 .tituloJuego{
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+
     position: absolute;
+    left: 0;
+    top: 0px;
+    color: white;
     background: transparent;
     margin-left: 6px;
     padding: 5px;
@@ -329,20 +340,20 @@ overflow: hidden;
 
 
 .subCard{
+    position: relative;
     width: 100%;
-    height: 20%;
+    height: 80px;
     background-color: var(--negroL1);
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     float: left;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: end;
 }
 
 
 .btnCard{
-    margin-left: 5%;
     background-color: var(--negro);
     height: 25px;
     width: 40%;
@@ -350,10 +361,17 @@ overflow: hidden;
     align-items: center;
     justify-content: center;
     border: var(--negroS2)  1px;
+    position: absolute;
+    left:5px;
+    bottom: 15px;
+
 }
 .btn10{
-    
+    position: absolute;
+    right:18px;
+    bottom: -10px;
     font-family: var(--robotoSerif);
+    
     
     font-size: 20px;
     height: 25px;
