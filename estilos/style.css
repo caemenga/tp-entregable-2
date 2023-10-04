@@ -174,7 +174,9 @@ footer{
 }
 
 /* Main*/
-
+.main{
+    padding-top: 100px;
+}
 /*Carrusel*/
 .carrusel{
 width: 80%;

@@ -1,0 +1,34 @@
+
+.main{
+    padding-top: none;
+}
+.breadcrum{
+    display: flex;
+    flex-direction: row;
+    
+}
+.contenedorJuego{
+    width: 100%;
+    height: 300px;
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+.juegoYcontroles{
+    width: 100%;
+    height: 250px;
+    background-color: wheat;
+    display: flex;
+    justify-content: end;
+        
+}
+.controles{
+    width: 20%;
+}
+.juego{
+    background-color: blue;
+    width: 80%;
+    height: auto;
+    
+}
+
