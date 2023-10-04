@@ -1,25 +1,35 @@
 "use strict"
-let arrowRigth = document.querySelector('.arrowRigth');
-let arrowLeft = document.querySelector('.arrowLeft');
-let contenedorPrincipal = document.querySelector('.contenedorPrincipal');
-let posicion = 0;
+// Selecciona todos los elementos con la clase "contenedorPrincipal"
+const contenedoresPrincipales = document.querySelectorAll('.contenedorPrincipal');
 
-arrowRigth.addEventListener('click', moveRigth);
+// Inicializa un objeto para almacenar las posiciones individuales de los contenedores
+const posiciones = {};
 
+// Agrega eventos a los botones de flecha
+document.querySelectorAll('.arrowRigth').forEach(function (arrowRigth, index) {
+  const arrowLeft = document.querySelectorAll('.arrowLeft')[index];
+  const contenedorPrincipal = contenedoresPrincipales[index];
+  posiciones[index] = 0;
 
-function moveRigth(){
-    if(posicion>-53){
-        posicion -= 27;
-        contenedorPrincipal.style.transform = `translateX(${ posicion }%)`;
-    }
+  arrowRigth.addEventListener('click', function () {
+    moveRigth(index);
+  });
+
+  arrowLeft.addEventListener('click', function () {
+    moveLeft(index);
+  });
+});
+
+function moveRigth(index) {
+  if (posiciones[index] > -53) {
+    posiciones[index] -= 27;
+    contenedoresPrincipales[index].style.transform = `translateX(${posiciones[index]}%)`;
+  }
 }
 
-arrowLeft.addEventListener('click', moveLeft);
-
-function moveLeft(){
-    if(posicion<-1){
-        posicion += 27;
-        contenedorPrincipal.style.transform = `translateX(${ posicion }%)`;
-    }
-
+function moveLeft(index) {
+  if (posiciones[index] < -1) {
+    posiciones[index] += 27;
+    contenedoresPrincipales[index].style.transform = `translateX(${posiciones[index]}%)`;
+  }
 }
