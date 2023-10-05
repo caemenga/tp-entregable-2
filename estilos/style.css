@@ -80,14 +80,15 @@ header{
 
 .menuHamburguesa{
     color: solid var(--blanco);
-    width: 8%;
-    height: 5%;
+    width: 10%;
+    height: 7%;
     padding-left: 10px;
     margin-right: 5px;
 }
 .menuHamburguesa:hover{
     transition: transform .3s ease-out;
     transform: scale(1.5);
+    cursor: hand;
 }
 .logoTresEstrellas{
     width: 25% ;
@@ -159,6 +160,7 @@ header{
 /* Footer */
 
 footer{
+    margin-top: 10%;
     background-color: var(--negroS2);
     display: flex;
     flex-direction: column;
@@ -224,19 +226,20 @@ footer{
 width: 80%;
 height: 350px;
 background-color: var(--negro);
-margin-top: 15px;
+margin-top: 7px;
+margin-bottom: -60px;
 
 overflow: hidden;
 }
 .tituloCarrusel{
-    margin-bottom: -8px;
+    margin-bottom: -30px;
 }
 
 .contenedorPrincipal{
     width: 200%;
     display: flex;
     flex-direction: row;
-    margin: 20px;
+    margin: 5px;
     background-color: var(--negro);
     transition: transform .9s ease-out;
     }
@@ -301,7 +304,7 @@ overflow: hidden;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     position: relative;
-    opacity: 0.1;
+    
     
 }
 .contenedorImgCard:hover .tituloJuego{

@@ -1,0 +1,63 @@
+:root{
+    --naranja: #FA7609;
+    --blanco: #eee;
+    
+    --negro: #2F3237;
+    --negroL1: #545961;
+    --negroS2: #0C121C;
+    --verdeS1 : #007A49;
+    --verdeL1 : #2AA674; 
+    --acento: #3368EE;
+    --averiaSansLibre: 'Averia Sans Libre';
+    --robotoSerif: 'Roboto Serif';
+}
+.menuCategorias{
+    position: absolute;
+    transition: transform .5s ease-out;
+    transform: translateX(-200%);
+    width: 2.7%;
+    left: 2.7%;
+    top: 17%;
+}
+
+.iconosMenu{
+    list-style: none;
+    width: 200%;
+    height: auto;
+    background-color: var(--negroS2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -4px;
+    transform: translateX(-50%);
+    border-radius: 10px; 
+}
+.iconM{
+   
+    width: 28px;
+    height: 28px;
+    margin-top: 10px;
+}
+
+.catDesplegadas{
+    position: absolute;
+    left: 5%;
+    top: 16.5%;
+    background-color: var(--negroS2);
+    height: auto;
+    border-radius: 10px;
+    z-index: 1;
+    display: none;
+
+}
+.catMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.catMenu li{
+    margin: 12px;
+    color: var(--blanco);
+}
