@@ -17,7 +17,7 @@
     transform: translateX(-200%);
     width: 2.7%;
     left: 2.7%;
-    top: 17%;
+    top: 13.5%;
 }
 
 .iconosMenu{
@@ -42,9 +42,10 @@
 .catDesplegadas{
     position: absolute;
     left: 5%;
-    top: 16.5%;
+    top: 13%;
     background-color: var(--negroS2);
     height: auto;
+    width: 7%;
     border-radius: 10px;
     z-index: 1;
     display: none;

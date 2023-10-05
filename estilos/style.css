@@ -26,29 +26,30 @@ body{
 h1{
     font-family: var(--averiaSansLibre);
     color: var(--blanco);
-    font-size: 30px;
+    font-size: 20px;
 }
 
 h2{
     font-family: var(--averiaSansLibre);
     color: var(--blanco);
-    font-size: 24px;
+    font-size: 18px;
     
 }
 
 h3{
     color: var(--negroS2);
     font-family: var(--averiaSansLibre);
-    font-size: 20px;
+    font-size: 16px;
     
 }
 h4{
     color: var(--blanco);
     font-family: var(--averiaSansLibre);
+    font-size: 14px;
 }
 h5{
     font-family: var(--robotoSerif);
-    font-size: 14px;
+    font-size: 12px;
     color: var(--blanco);
 
 }
@@ -103,6 +104,8 @@ header{
     align-items: center;
     margin: 0 auto;
     width: 33%;
+    position: relative;
+    left: 10%;
     
 }
 
@@ -135,25 +138,26 @@ header{
 
 
 .carrito{
-    width: 15%;
-    height: 30px;
+    width: 4%;
+    height: 44%;
     margin-left: 10%;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--acento);
+    background-color: var(--negro);
     position: relative; 
-    left: 100px; 
+    left: 23%;
+    border-radius: 50%; 
 
 }
 
-.carritoLetra{
-    text-decoration: none;
-    color: white;
-    font-size: 20px
-    
+.carrito:hover{
+    transition: transform .5s ease-out;
+    transform: scale(1.2);
 }
+
+.iconCarrito{
+    width: 100%;
+    height: 100%;
+}
+
 
 
 
@@ -228,11 +232,8 @@ height: 350px;
 background-color: var(--negro);
 margin-top: 7px;
 margin-bottom: -60px;
-
+position: relative;
 overflow: hidden;
-}
-.tituloCarrusel{
-    margin-bottom: -30px;
 }
 
 .contenedorPrincipal{
@@ -244,20 +245,16 @@ overflow: hidden;
     transition: transform .9s ease-out;
     }
 
-    .contenedorArrow{
-        width: 8%;
-        display: flex;
-       justify-content: space-between;
-       float: right;
-       align-items: center;
-       margin-top: -10px;
-    }
+    
    
     
     .arrowRigth{
+        position: relative;
+        right: -42%;
+        top: 165px;
         width: 40px;
         height: 40px;
-        float: inline-start;
+        
  
     }
     .arrowRigth:hover{
@@ -266,9 +263,14 @@ overflow: hidden;
     }
     
     .arrowLeft{
+        position: relative;
+        left: -42%;
+        top: 195px;
         width: 40px;
         height: 40px;
-        float: inline-start;
+        color: var(--blanco);
+        
+
 
     }
     .arrowLeft:hover{
