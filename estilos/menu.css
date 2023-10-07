@@ -14,39 +14,80 @@
 .menuCategorias{
     position: absolute;
     transition: transform .5s ease-out;
-    transform: translateX(-200%);
-    width: 2.7%;
-    left: 2.7%;
-    top: 13.5%;
+    transform: translateX(0%);
+    width: fit-content;
+    height: fit-content;
+    left: 0px;
+    top: 71px;
+    z-index: 1;
+    margin-left: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: var(--negroS2);
+   
 }
 
+.menuCategorias:hover .categoria{
+    display: block;
+}
 .iconosMenu{
     list-style: none;
-    width: 200%;
+    width: 150%;
     height: auto;
-    background-color: var(--negroS2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-top: -4px;
-    transform: translateX(-50%);
     border-radius: 10px; 
+    
+    
 }
-.iconM{
-   
-    width: 28px;
-    height: 28px;
+.iconosMenu li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
     margin-top: 10px;
+    margin-bottom: 10px;
+}
+.categoria{
+    display: none;
+}
+
+
+
+.iconosMenu li p{
+   
+    color: var(--blanco);
+    width: fit-content;
+    padding-left: 15px;
+    position: relative;
+    right: 25px;
+
+}
+
+.iconM{
+   position: relative;
+   max-width: 100%;
+   max-height: 100%;
+    
+}
+
+.iconCategoria{
+    width: 22px;
+    height: 22px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .catDesplegadas{
     position: absolute;
     left: 5%;
-    top: 13%;
+    top: 70px;
     background-color: var(--negroS2);
-    height: auto;
-    width: 7%;
-    border-radius: 10px;
+    height: fit-content;
+    width: fit-content;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     z-index: 1;
     display: none;
 
@@ -59,6 +100,8 @@
 }
 
 .catMenu li{
-    margin: 12px;
+    margin: 10px;
     color: var(--blanco);
+    display: flex;
+    justify-content: space-around;
 }

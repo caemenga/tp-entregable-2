@@ -6,8 +6,8 @@ let menuCategorias =document.querySelector('.menuCategorias');
 
 
 menuHamburguesa.addEventListener('click',desplegarCat);
-menuCategorias.addEventListener('mouseover', mostrarMenu);
-document.addEventListener('click', cerrarMenu);
+
+
 
 function desplegarCat(){
     let catTranslateX = getComputedStyle(menuCategorias).transform;
@@ -26,7 +26,4 @@ function mostrarMenu(){
         catDesplegadas.style.display = 'block';
 }
 
-function cerrarMenu(){
-    let catDesplegadas = document.querySelector('.catDesplegadas');
-    catDesplegadas.style.display = 'none';
-}
+catDesplegadas.style.display = 'none';
