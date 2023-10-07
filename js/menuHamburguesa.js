@@ -19,11 +19,3 @@ function desplegarCat(){
         menuCategorias.style.transform = 'translateX(-200%)';
     }
 }
-
-function mostrarMenu(){
-    let catDesplegadas = document.querySelector('.catDesplegadas');
-    
-        catDesplegadas.style.display = 'block';
-}
-
-catDesplegadas.style.display = 'none';

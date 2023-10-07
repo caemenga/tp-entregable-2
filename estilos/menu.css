@@ -12,7 +12,7 @@
     --robotoSerif: 'Roboto Serif';
 }
 .menuCategorias{
-    position: absolute;
+    position: fixed;
     transition: transform .5s ease-out;
     transform: translateX(0%);
     width: fit-content;
@@ -24,7 +24,7 @@
     padding-left: 25px;
     padding-right: 25px;
     background-color: var(--negroS2);
-    border-radius: 10px;
+    
     padding-bottom: 30px;
 }
 
@@ -52,6 +52,8 @@
     display: none;
     position: relative;
     right: 40px;
+    width: 50%;
+    
 }
 
 
@@ -85,20 +87,21 @@
 }
 
 .menuUsuario{
-    display: block;
-    width: fit-content;
+    display: none;
+    width: 250px;
     height: fit-content;
     background-color: var(--negroS2);
     padding-bottom: 15px;
-    border-radius: 10px ;
-    position: absolute;
+    position: fixed;
     right: 0px;
     top: 8%;
     z-index: 1;
+    border-bottom-left-radius: 5px;
 }
 
+
 .menuUsuario ul{
-    width: 175px;
+    width: 100%;
     height: fit-content;
 }
 
@@ -116,6 +119,10 @@
 
 .lineaPerfil{
     width: 100%;
+}
+
+.showPerfil{
+    display: block;
 }
 
 

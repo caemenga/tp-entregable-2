@@ -68,6 +68,8 @@ header{
     border-bottom: var(--negroS2) 2px solid;
     align-items: center;
     position: fixed;
+    background-color: var(--negroS2);
+    z-index: 1;
 }
 
 .menuYlogo{
@@ -126,6 +128,8 @@ header{
     width: 33%;
     margin-right: 15px;
 }
+
+
 .contenedorPerfil{
     width: 50px;
     height: 50px;
@@ -170,7 +174,7 @@ footer{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: fit-content;
+    height: 838px;
     align-items: center;
     justify-content: space-around;
 }
