@@ -67,6 +67,7 @@ header{
     height: 70px;
     border-bottom: var(--negroS2) 2px solid;
     align-items: center;
+    position: fixed;
 }
 
 .menuYlogo{

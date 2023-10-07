@@ -91,6 +91,10 @@
     background-color: var(--negroS2);
     padding-bottom: 15px;
     border-radius: 10px ;
+    position: absolute;
+    right: 0px;
+    top: 71px;
+    z-index: 1;
 }
 
 .menuUsuario ul{
