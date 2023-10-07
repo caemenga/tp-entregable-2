@@ -85,7 +85,7 @@
 }
 
 .menuUsuario{
-    
+    display: block;
     width: fit-content;
     height: fit-content;
     background-color: var(--negroS2);
