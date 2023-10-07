@@ -49,6 +49,8 @@
 }
 .categoria{
     display: none;
+    position: relative;
+    right: 25px;
 }
 
 
