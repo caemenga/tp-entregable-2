@@ -24,7 +24,8 @@
     padding-left: 25px;
     padding-right: 25px;
     background-color: var(--negroS2);
-   
+    border-radius: 10px;
+    padding-bottom: 30px;
 }
 
 .menuCategorias:hover .categoria{
@@ -50,18 +51,20 @@
 .categoria{
     display: none;
     position: relative;
-    right: 25px;
+    right: 40px;
 }
 
 
 
 .iconosMenu li p{
-   
+   font-family: var(--robotoSerif);
+   font-size: 18px;
     color: var(--blanco);
     width: fit-content;
     padding-left: 15px;
     position: relative;
     right: 25px;
+
 
 }
 
@@ -73,37 +76,44 @@
 }
 
 .iconCategoria{
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.catDesplegadas{
-    position: absolute;
-    left: 5%;
-    top: 70px;
-    background-color: var(--negroS2);
-    height: fit-content;
+.menuUsuario{
+    
     width: fit-content;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    z-index: 1;
-    display: none;
-
-}
-.catMenu{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    list-style: none;
+    height: fit-content;
+    background-color: var(--negroS2);
+    padding-bottom: 15px;
+    border-radius: 10px ;
 }
 
-.catMenu li{
-    margin: 10px;
-    color: var(--blanco);
+.menuUsuario ul{
+    width: 175px;
+    height: fit-content;
+}
+
+.menuUsuario ul li{
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
+    margin-top: 15px;
+    align-items: center;
 }
+
+.categoriaPerfil p{
+    color: var(--blanco);
+}
+
+.lineaPerfil{
+    width: 100%;
+}
+
+
+
+
