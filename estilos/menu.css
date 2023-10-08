@@ -24,20 +24,21 @@
     padding-left: 25px;
     padding-right: 25px;
     background-color: var(--negroS2);
-    
+    border-top: #eee solid 2px;
     padding-bottom: 30px;
+    
 }
 
 .menuCategorias:hover .categoria{
     display: block;
+    
 }
 .iconosMenu{
     list-style: none;
-    width: 150%;
+    width:  fit-content;
     height: auto;
     margin-top: -4px;
-    border-radius: 10px; 
-    
+    background-color: var(--negroS2);    
     
 }
 .iconosMenu li{
@@ -48,12 +49,26 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+
+.iconosMenu li:hover .iconM {
+    transition: transform .4s ease-out;
+    transform: scale(1.1);
+}
+.iconosMenu li:hover p{
+    transition: transform .4s ease-out;
+    transform: scale(1.2);
+   
+}
+
 .categoria{
     display: none;
     position: relative;
     right: 40px;
     width: 50%;
-    
+    padding-left: 60px;
+   
+
 }
 
 
@@ -66,6 +81,7 @@
     padding-left: 15px;
     position: relative;
     right: 25px;
+    cursor: pointer;
 
 
 }
@@ -84,7 +100,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
+
+
 
 .menuUsuario{
     display: none;

@@ -73,12 +73,13 @@ header{
 }
 
 .menuYlogo{
-    width: 33%;
+    width: fit-content;
     display: flex;
     align-items: center;
     
     flex-direction: row;
     margin-left: 10px;
+    
     
 }
 
@@ -88,10 +89,11 @@ header{
     height: 7%;
     padding-left: 10px;
     margin-right: 5px;
+    cursor: pointer;
 }
 .menuHamburguesa:hover{
     transition: transform .3s ease-out;
-    transform: scale(1.5);
+    transform: scale(1.2);
     cursor: hand;
 }
 .logoTresEstrellas{
@@ -99,9 +101,15 @@ header{
     height: 8% auto;
     margin-bottom: 10px;
     margin-left: 20px;
+    cursor: pointer;
+    
     
 }
 
+.logoTresEstrellas:hover{
+    transition: transform .5s ease-out;
+    transform: scale(1.1);
+}
 
 .buscador{
     align-items: center;
