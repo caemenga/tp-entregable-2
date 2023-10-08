@@ -33,6 +33,10 @@
     display: block;
     
 }
+.menuCategorias:hover{
+    padding-right: 0%;
+    
+}
 .iconosMenu{
     list-style: none;
     width:  fit-content;
