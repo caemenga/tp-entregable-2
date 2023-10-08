@@ -115,3 +115,7 @@
 .precioOferta p{
     color: var(--okey);
 }
+
+p{
+    font-size: 14px;
+}
