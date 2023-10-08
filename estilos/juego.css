@@ -13,6 +13,7 @@
     padding-top: none;
 }
 .breadcrum{
+    width: 100%;
     height: 40px;
     display: flex;
     flex-direction: row;
