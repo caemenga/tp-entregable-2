@@ -27,16 +27,17 @@ document.querySelectorAll('.arrowRigth').forEach(function (arrowRigth, index) {
 function moveRigth(index) {
   if (posiciones[index] > -53) {
     posiciones[index] -= 27;
+    let card = document.querySelectorAll(".card");
     contenedoresPrincipales[index].style.transform = `translateX(${posiciones[index]}%)`;
-    let card = document.querySelectorAll(".card")[index];
+    card.style.transform =  `perspective(1000px) rotateY(0deg)`;
   }
 }
 
 function moveLeft(index) {
   if (posiciones[index] < -1) {
     posiciones[index] += 27;
-    let card = document.querySelectorAll(".card")[index];
+    let card = document.querySelectorAll(".card");
     contenedoresPrincipales[index].style.transform = `translateX(${posiciones[index]}%)`;
-    card.classList.toggle('cardScroll');
+    card.style.transform =  `perspective(1000px) rotateY(0deg)`;
   }
 }
