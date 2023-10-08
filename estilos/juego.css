@@ -55,15 +55,18 @@
     background-color: black;
     width: 62%;
     height: 90%;
-    border-radius: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     
     
 }
 .subPantallaJuego{
     width: 62%;
-    height: 90%;
+    height: 10%;
     border-radius: 20px;
-    background-color: white
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .informacionJuego{
