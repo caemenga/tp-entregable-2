@@ -40,9 +40,9 @@
 .iconosMenu{
     list-style: none;
     width:  fit-content;
-    height: auto;
+    height: fit-content;
     margin-top: -4px;
-    background-color: var(--negroS2);    
+    background-color: var(--negroS2);   
     
 }
 .iconosMenu li{
@@ -51,7 +51,7 @@
     align-items: center;
     flex-direction: row;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10PXpx;
 }
 
 

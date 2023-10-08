@@ -8,7 +8,7 @@
 :root{
     --naranja: #FA7609;
     --blanco: #eee;
-    
+    --amarillo: #F4C01E;
     --negro: #2F3237;
     --negroL1: #545961;
     --negroS2: #0C121C;
@@ -57,6 +57,10 @@ h5{
     font-family: arial;
     color: var(--blanco);
     font-size: 10px;
+    border-color: var(--amarillo);
+    border: 2px solid;
+    position: relative;
+    z-index: 1;
 }
 /* Header */
 header{
@@ -85,7 +89,7 @@ header{
 
 .menuHamburguesa{
     color: solid var(--blanco);
-    width: 10%;
+    width: 40px;
     height: 7%;
     padding-left: 10px;
     margin-right: 5px;
@@ -97,13 +101,11 @@ header{
     cursor: hand;
 }
 .logoTresEstrellas{
-    width: 25% ;
-    height: 8% auto;
+    width: 80px ;
+    height: fit-content;
     margin-bottom: 10px;
     margin-left: 20px;
-    cursor: pointer;
-    
-    
+    cursor: pointer;  
 }
 
 .logoTresEstrellas:hover{
@@ -114,18 +116,25 @@ header{
 .buscador{
     align-items: center;
     margin: 0 auto;
-    width: 33%;
+    width: fit-content;
     position: relative;
-    left: 10%;
+    
     
 }
 
 .inputBuscar{
     background-color: var(--blanco);
-    width: 360px;
-    height: 45px;
-    border-radius: 50px;
+    width: 250px;
+    height: 35px;
+    border-radius: 15px;
     padding-left: 20px;
+    
+}
+.lupa{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right:300px;
 }
 
 .usuario{
@@ -133,7 +142,7 @@ header{
     flex-direction: row;
     justify-content: right;
     align-items: center;
-    width: 33%;
+    width: fit-content;
     margin-right: 15px;
 }
 
@@ -154,10 +163,9 @@ header{
     width: 4%;
     height: 44%;
     margin-left: 10%;
-    background-color: var(--negro);
     position: relative; 
-    left: 23%;
-    border-radius: 50%; 
+    right: 5%;
+     
 
 }
 
@@ -172,7 +180,28 @@ header{
 }
 
 
+.misJuegos{
+    background: linear-gradient(to bottom, var(--negro), #000000);
+    width: 160px;
+    height: 60%;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid var(--amarillo);
+    position: relative;
+    right: 4%;
+}
+.misJuegos p{
+    color: var(--blanco);
+    font-family: var(--robotoSerif);
+    font-size: 12px;
+}
 
+.logoMisJuegos{
+    width: 20px;
+    height: 20px;
+}
 
 /* Footer */
 
