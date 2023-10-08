@@ -23,7 +23,7 @@
     
     flex-direction: row;
     align-items: baseline;
-    justify-content: space-between;
+    justify-content: center;
     padding: 40px;
     position: relative;
     right: 325px;
@@ -58,6 +58,12 @@
     border-radius: 20px;
     
     
+}
+.subPantallaJuego{
+    width: 62%;
+    height: 90%;
+    border-radius: 20px;
+    background-color: white
 }
 
 .informacionJuego{

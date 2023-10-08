@@ -1,18 +1,22 @@
 "use strict"
-// Selecciona todos los elementos con la clase "contenedorPrincipal"
-const contenedoresPrincipales = document.querySelectorAll('.contenedorPrincipal');
 
-// Inicializa un objeto para almacenar las posiciones individuales de los contenedores
-const posiciones = {};
+let contenedoresPrincipales = document.querySelectorAll('.contenedorPrincipal');
 
-// Agrega eventos a los botones de flecha
+
+let posiciones = {};
+
+
 document.querySelectorAll('.arrowRigth').forEach(function (arrowRigth, index) {
-  const arrowLeft = document.querySelectorAll('.arrowLeft')[index];
-  const contenedorPrincipal = contenedoresPrincipales[index];
+  let  arrowLeft = document.querySelectorAll('.arrowLeft')[index];
+  let contenedorPrincipal = contenedoresPrincipales[index];
+  let card = document.querySelectorAll(".card")[index];
+
+
   posiciones[index] = 0;
 
   arrowRigth.addEventListener('click', function () {
     moveRigth(index);
+    card.classList.toggle('cardScroll');
   });
 
   arrowLeft.addEventListener('click', function () {

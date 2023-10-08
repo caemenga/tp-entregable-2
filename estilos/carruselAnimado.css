@@ -9,17 +9,10 @@
     transition: transform 0.5s ease-in-out;
   }
   
-  .card {
-    width: 200px;
-    margin: 0 10px;
-    transform: perspective(1000px) rotateY(0deg);
-    transition: transform 0.5s ease-in-out;
-  }
   
-  /* Aplicar rotación cuando el hover en una carta */
-  .card:hover {
-    transform: perspective(1000px) rotateY(-20deg);
-  }
+  
+
+
   
   .contenedorImgCard img {
     width: 100%;
