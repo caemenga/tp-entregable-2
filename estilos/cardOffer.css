@@ -27,7 +27,8 @@
     flex-direction: column;
     overflow: hidden;
     margin-bottom: 30px;
-    
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
  
 .tituloOferta{
@@ -36,26 +37,34 @@
 
 .ImagenPrincipalOferta{
     padding-top: 10px;
-    width: 110%;
+    width: 100%;
     height: 76%;
+    
     
 }
 
 .imagenJuegoOferta{
     width: 100%;
     height: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .subCardOferta{
     width: 100%;
     height: 22%;
     background-color: var(--negroS2);
+    
+    display: flex;
+    flex-flow: row nowrap;
 }
 
 .tituloYPrecio{
     width: 33%;
     display: flex;
     flex-flow: column nowrap;
+    position: relative;
+    top: 10%;
 }
 
 .titulo-icono{
@@ -75,12 +84,20 @@
 .precios{
     display: flex;
     flex-direction: row;
+    margin-top: 2px;
+    position: relative;
+    
+}
+
+.lineaOferta{
+    position: absolute;
+    z-index: 1;
 }
 
 .off{
     background: linear-gradient(to bottom, var(--negro), #000000);
     width: 25%;
-    height: 20px;
+    height: 18px;
     margin-left: 5px;
     display: flex;
     align-items: center;
@@ -93,19 +110,19 @@
 
 .precioViejo{
     width: 30%;
-    height: 20px;
+    height: 18px;
     background: linear-gradient( to bottom, #868699, var(--negro));
     background-color: #868686;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.pricioViejo p{
-    color: #eee;
+.precioViejo p{
+    color: var(--negroS2);
 }
 .precioOferta{
     width: 30%;
-    height: 20px;
+    height: 18px;
     background: linear-gradient(to bottom, var(--negro), #000000);
     display: flex;
     align-items: center;
@@ -117,5 +134,62 @@
 }
 
 p{
-    font-size: 14px;
+    font-size: 12px;
+}
+
+
+.galeriaOferta{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+
+.imgGaleriaOferta{
+    width: calc(100% / 5);
+    height: 70%;    
+    margin-left: 5px;
+    background-color: #00CC00;
+    border-radius: 10px;
+}
+
+.imgGalOfe{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.agregarAAlCarrito{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnAgregarCarrito{
+    height: 50%;
+    width: fit-content;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, var(--negro), #000000);
+    margin-left: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1.5px solid var(--okey);
+    position: relative;
+    left: 30%;
+
+}
+.btnAgregarCarrito h4{
+    font-size: 10px;
+    font-family: var(--robotoSerif);
+    margin-right: 10px;
+    color: var(--okey);
+}
+.iconAgregarCarrito{
+    width: 22px;
+    height: 22px;
 }
