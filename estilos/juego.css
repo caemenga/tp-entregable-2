@@ -19,7 +19,7 @@ body{
 
 /*breadcrumb*/
 .breadcrum{
-    height: 10px;
+    height: 50px;
     width: 100%;
     height: 40px;
     display: flex;
@@ -27,7 +27,7 @@ body{
     align-items: baseline;
     justify-content: center;
     
-    padding: 10px;
+    padding: 22.5px;
     position: relative;
     right: 31.7%;
     top: 22px;
@@ -47,7 +47,7 @@ body{
 
 .contenedorJuego{
     width: 100%;
-    height: 900px;
+    height: 2000px;
     float: right;
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@ body{
 }
 .contenedorPantallaJuego{
     width: 100%;
-    height: 64%;
+    height: 37%;
     display: flex;
     flex-direction: row;
     align-items: start;
@@ -82,6 +82,10 @@ body{
     height: 90%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     
     
 }
@@ -96,20 +100,90 @@ body{
     background-color: #0C121C;
     border: black solid 3px;
 }
-.instruccionesJuego{
+.instruccionesYControles{
     width: 20%;
     height: 94%;
     background-color: black;
     display: flex;
     flex-direction: column;
     
-    align-items: end;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
-    left: 38px;
+    left: 59.5px;
     border-radius: 10px;
     border: black solid 3px;
     background-color: #0C121C;
 }
+.instrucciones{
+    width: 85%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    
+    margin-top: 15px;
+    
+}
+
+.listInstrucciones{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 10%;
+    margin-top: 15px;
+   
+    
+}
+.itemListInstrucciones{
+    width: 80%;
+
+    font-family: var(--averiaSansLibre);
+    color: #eee;
+    font-size: 16.5px;
+    margin: 15px;
+    padding-bottom: 20px;
+    list-style-type: decimal;
+}
+.tituloIntrucciones{
+    color: #F4C01E;
+    font-size: 22.5px;
+    font-family: var(--averiaSansLibre);
+}
+.controles{
+    width: 85%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 15px;
+    
+}
+.conteinerControles{
+    display: flex;
+    flex-direction: row ;
+}
+.contenedorMouseTexto{
+    display: flex;
+    flex-direction: row;
+}
+.imagenMouse{
+    width: 40%;
+    height: 55%;
+}
+.textoControles{
+    width: 70%;
+    font-family: var(--averiaSansLibre);
+    color: #eee;
+    font-size: 16.5px;
+}
+
+
+
+
+
+
 
 .informacionJuego{
     width: 73%;
@@ -117,7 +191,7 @@ body{
     background-color: var(--negro);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: start;
     align-items: end;
     background-color: #1E2022;
     
@@ -125,7 +199,7 @@ body{
 
 .imagenesJuego{
     width: 85%;
-    height: 35%;
+    height: 22%;
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -136,39 +210,258 @@ body{
 
 .imgJuego{
     width: calc(95%/5);
-    height: 90%;
+    height: 100%;
     background-color: aqua;
-    
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.contPlay{
+    width: calc(95%/5);
+  
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.videoJuego{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 30%;
+}
+
+.iconPlayJuego{
+   width: 40px;
+   height: 40px;
+   position: absolute;
+  
+   z-index: 1;
 }
 
 .textoJuego{
+    margin-top: 5%;
+    font-size: 20px;
     font-family: var(--averiaSansLibre);
     color: #eee;
     
 }
+.textoTituloInformacion{
+    margin-top: 5%;
+    font-size: 28px;
+    font-family: var(--averiaSansLibre);
+    color: #eee;
+}
 .contenedorTextoJuego{
     width: 85%;
-    height: 30%;
+    height: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: start;
+    margin-top: 15px;
 }
 
 .contenedorComentarios{
+    margin-top: 150px;
     width: 73%;
-    height: 500px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 16%;
+    top: 148.5%;
 }
 .comentarioEIcono{
     width: 85%;
     height: fit-content;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+.h1Comentario{
+    margin-left: 15px;
+    font-family: var(--averiaSansLibre);
+    
 }
 .comentario{
     width: 85%;
-    height: calc(90%/3);
-    background-color: #007A49;
-    margin: 15px;
+    height: calc(55%/3);
+    background-color: #2F3237;
+    margin-bottom: 5px;
     border-radius: 20px;
+    border: 2px solid black;
+}
+.escribeUnComentario{
+    width: 85%;
+    height: calc(55%/3);
+    background-color: #2F3237;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    border: 3px solid black;
+}
+.contenedorTextoEIcono{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.contenedorTextoEIcono  img {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.contenedorInputButton{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.inputComentario{
+    width: 70%;
+    height: 50%;
+    border-radius: 10px;
+    margin-left: 5%;
+    
+}
+.imgAvatar{
+    width: 5%;
+    height: 50%;
+    border-radius: 50%;
+    
+
 }
 
+.buttonComentario{
+    width: 13%;
+    height: 50%;
+    background-color: #3368EE;
+    font-family: var(--averiaSansLibre);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+.iconSend{
+    width: 25%;
+    
+}
+
+.comentarioPersonaje{
+    width: 80%;
+    height: 40%;
+    margin-left: 5%;
+    font-size: 15px;
+    font-family: var(--averiaSansLibre);
+    color: #eee;
+}
+.tituloComentarioPersonaje{
+    width: 80%;
+    height: 40%;
+    font-family: var(--averiaSansLibre);
+    color: #eee;
+}
+
+.contenedorDataComentario{
+    width: 100%;
+    height: 50%;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--robotoSerif);
+    color: #eee;
+}
+.dataComentario{
+    font-size: 10px;
+    margin-left: 5%;
+}
+.dataComentarioDenunciar{
+    font-size: 10px;
+    margin-left: 5%;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.dataComentarioRight{
+    font-size: 15px;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 3%;
+}
+.likeSVG{
+    width: 12%;
+    margin-left: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+} 
+.contenedorComentario{
+    width: 100%;
+    height: 50%;
+
+}
+
+.contenedorCarruselChico{
+    width: 100%;
+    height: 1060px;
+    position: absolute;
+}
+.carruselChico{
+    width: 20%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+   
+    align-items: center;
+    justify-content: space-around;
+    
+   
+    border-radius: 10px;
+    border: black solid 3px;
+    background-color: #0C121C;
+
+    position: relative;
+    left: 76.5%;
+    top: 29.5%;
+
+}
+.contenedorCardChica{
+    width: 100%;
+    height: calc(90%/5);
+    display: flex;
+    flex-direction: column;
+    
+    align-items: start;
+    margin-left: 15px;
+}
+.contenedorTituloCarruserChico{
+    width: 100%;
+    display: flex;
+    align-items: start;
+}
+.tituloJuegoCardChica{
+    color: #eee;
+    font-family: var(--averiaSansLibre);
+}
+.contenedorTextoTitulo{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.imgJuegoChico{
+    width: 80%;
+    height: 85%;
+    background-color: aqua;
+    margin: 10px;
+    border-radius: 20px;
+}
