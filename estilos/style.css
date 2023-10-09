@@ -22,6 +22,9 @@
 body{
     background-color: var(--negro);
 }
+.main{
+    padding-top: 45px;
+}
 /*Fuentes*/
 h1{
     font-family: var(--averiaSansLibre);
