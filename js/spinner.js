@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         percentage.innerHTML = `${progreso}%`;
       }
       if(progreso === 100){
-        window.location.href = 'index.html';
+        window.location.href = 'home.html';
     }
     }
     
