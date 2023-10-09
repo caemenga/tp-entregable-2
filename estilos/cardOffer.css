@@ -7,6 +7,7 @@
     --naranja: #FA7609;
     --blanco: #eee;
     --okey: #00CC00;
+    --amarillo: #F4C01E;
     --negro: #2F3237;
     --negroL1: #545961;
     --negroS2: #0C121C;
@@ -20,7 +21,7 @@
 
 .cardOferta{
     position: relative;
-    top: 80px;
+    top: 70px;
     width: 80%;
     height: 400px;
     display: flex;
@@ -105,7 +106,7 @@
 }
 
 .off p{
-    color: var(--okey);
+    color: var(--blanco);
 }
 
 .precioViejo{
@@ -118,7 +119,7 @@
     justify-content: center;
 }
 .precioViejo p{
-    color: var(--negroS2);
+    color: var(--blanco);
 }
 .precioOferta{
     width: 30%;
@@ -130,7 +131,7 @@
 }
 
 .precioOferta p{
-    color: var(--okey);
+    color: var(--blanco);
 }
 
 p{
@@ -178,7 +179,7 @@ p{
     margin-left: 20px;
     padding-left: 5px;
     padding-right: 5px;
-    border: 1.5px solid var(--okey);
+    border: 1.5px solid #eeeeee;
     position: relative;
     left: 63%;
 
@@ -187,7 +188,7 @@ p{
     font-size: 10px;
     font-family: var(--robotoSerif);
     margin-right: 10px;
-    color: var(--okey);
+    color: #eeeeee;
 }
 .iconAgregarCarrito{
     width: 22px;

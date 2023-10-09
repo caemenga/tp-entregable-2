@@ -20,7 +20,7 @@
 }
 
 body{
-    background-color:var(--negro);
+    background-color: var(--negro);
 }
 /*Fuentes*/
 h1{
@@ -58,7 +58,6 @@ h5{
     color: var(--blanco);
     font-size: 10px;
     border-color: var(--amarillo);
-    border: 2px solid;
     position: relative;
     z-index: 1;
 }
@@ -146,6 +145,7 @@ header{
     align-items: center;
     width: fit-content;
     margin-right: 15px;
+    cursor: pointer;
 }
 
 
@@ -191,6 +191,7 @@ header{
     border: 2px solid var(--amarillo);
     position: relative;
     right: 4%;
+    cursor: pointer;
 }
 .misJuegos p{
     color: var(--blanco);
@@ -211,9 +212,13 @@ footer{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 838px;
+    height: 400px;
     align-items: center;
     justify-content: space-around;
+}
+.footerDiv h2{
+    position: relative;
+    left: 5px;
 }
 
 .logoYNombre{
@@ -247,7 +252,13 @@ footer{
 }
 
 .links div h4{
+    font-family: var(--robotoSerif);
     margin: 6px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.links div h2{
+    margin-bottom: 6%;
 }
 .iconos{
     display: flex;
@@ -258,6 +269,7 @@ footer{
     height: 35px;
     margin-left: 20px;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 /* Main*/
@@ -271,7 +283,7 @@ footer{
 .carrusel{
 width: 80%;
 height: 270px;
-background-color: var(--negro);
+
 margin-top: 7px;
 margin-bottom: -60px;
 position: relative;
@@ -283,7 +295,7 @@ overflow: hidden;
     display: flex;
     flex-direction: row;
     margin: 5px;
-    background-color: var(--negro);
+   
     transition: transform .9s ease-out;
     }
 
@@ -296,6 +308,7 @@ overflow: hidden;
         top: 165px;
         width: 40px;
         height: 40px;
+        cursor: pointer;
         
  
     }
@@ -311,6 +324,7 @@ overflow: hidden;
         width: 40px;
         height: 40px;
         color: var(--blanco);
+        cursor: pointer;
         
 
 
@@ -324,13 +338,16 @@ overflow: hidden;
     width: calc(100%/8);
     height: 180px;
     margin: 10px;
-    
 }
+
 .card:hover{
-    transition: transform .5s ease-out;
-    transform: scale(1.1);
-    
+    transition: all .4s ease-out;
+    transform: scale(1.05);
 }
+
+
+
+
 
 
 
@@ -341,6 +358,7 @@ overflow: hidden;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     position: relative;
+    cursor: pointer;
     
 }
 .contenedorImgCard:hover{
@@ -357,8 +375,16 @@ overflow: hidden;
     opacity:1;
 }
 
-.tituloJuego{
+.contenedorImgCard:hover .iconPlay{
+    display: block;
+    transition: all .4s ease-out;
+    transform: scale(1.1);
+}
+.contenedorImgCard:hover .imgCard{
+    opacity: 0.5;
+}
 
+.tituloJuego{
     position: absolute;
     left: 0;
     top: 0px;
@@ -371,19 +397,32 @@ overflow: hidden;
 
 
 
-
-.contenedorImgCard img{
+.imgCard{
     width: 100%;
     height: 100%;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
 }
 
-.contenedorImgCard:hover img{
-    width: 100%;
-    height: 100%;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+
+.freeIcon{
+    position: absolute;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    bottom: 5px;
+    right: 7%;
+}
+
+.iconPlay{
+    position: absolute;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    bottom: 5px;
+    top: 50%;
+    left: 44%;
+    display: none;
     
 }
 
@@ -392,7 +431,7 @@ overflow: hidden;
     position: relative;
     width: 100%;
     height: 80px;
-    background-color: var(--negroL1);
+    background-color: var(--negroS2);
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     float: left;
@@ -402,18 +441,32 @@ overflow: hidden;
 }
 
 
-.btnCard{
-    background-color: var(--negro);
-    height: 25px;
-    width: 40%;
+.precioCard{
+    
+    height: fit-content;
+    width: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
     border: var(--negroS2)  1px;
     position: absolute;
-    left:5px;
-    bottom: 15px;
+    left:7%;
+    bottom: 20%;
 
+}
+
+.iconoCompra{
+    width: 40%;
+    height: 40%;
+}
+.iconoCompra img{
+    width: 100%;
+    height: 100%;
+}
+
+.precioCard p{
+    color: var(--blanco);
+    font-size: 16px;
 }
 .btn10{
     position: absolute;
