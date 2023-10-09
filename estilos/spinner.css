@@ -1,0 +1,71 @@
+
+:root{
+    --naranja: #FA7609;
+    --blanco: #eee;
+    --okey: #00CC00;
+    --amarillo: #F4C01E;
+    --negro: #2F3237;
+    --negroL1: #545961;
+    --negroS2: #0C121C;
+    --verdeS1 : #007A49;
+    --verdeL1 : #2AA674; 
+    --acento: #3368EE;
+    --averiaSansLibre: 'Averia Sans Libre';
+    --robotoSerif: 'Roboto Serif';
+}
+
+.porcentaje{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: var(--amarillo);
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--negro);
+  }
+  
+  .contenedorSpinner {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+  }
+  
+  .spinner {
+    border: 8px solid var(--amarillo);
+    border-top: 8px solid var(--negro);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  
+
+  .barraCarga{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: black;
+    top: 100px;
+    left: 0%;
+    animation: progress 5s linear infinite;
+  }
+
+  @keyframes progress{
+    0% { transform: scaleX(0); }
+    100%{ transform: scaleX(1);}
+  }
