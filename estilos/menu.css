@@ -47,7 +47,6 @@
 .menuCategorias:hover .categoria{
     transition: all .5s ease-out;
     display: block;
-    
 }
 .menuCategorias:hover{
     padding-right: 0%;
@@ -131,13 +130,7 @@
 
 
 
-@keyframes vibration {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(5px); }
-  }
+
 
 
 

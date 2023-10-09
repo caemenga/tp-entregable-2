@@ -403,7 +403,19 @@ body{
     margin-left: 5px;
     margin-bottom: 15px;
     cursor: pointer;
-} 
+}
+
+.likeSVGclick{
+    animation: vibration 0.3s ease-out;
+}
+
+@keyframes vibration {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(5px); }
+  }
 .contenedorComentario{
     width: 100%;
     height: 50%;
