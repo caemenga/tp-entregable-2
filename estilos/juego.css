@@ -167,8 +167,9 @@ body{
 .comentario{
     width: 85%;
     height: calc(90%/3);
-    background-color: #007A49;
+    background-color: #1E2022;
     margin: 15px;
     border-radius: 20px;
+    border: 3px solid black;
 }
 
