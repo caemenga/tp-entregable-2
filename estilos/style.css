@@ -40,7 +40,7 @@ h2{
 }
 
 h3{
-    color: var(--negroS2);
+    color: var(--blanco);
     font-family: var(--averiaSansLibre);
     font-size: 16px;
     
@@ -63,6 +63,7 @@ h5{
     border-color: var(--amarillo);
     position: relative;
     z-index: 1;
+    width: fit-content;
 }
 /* Header */
 header{
