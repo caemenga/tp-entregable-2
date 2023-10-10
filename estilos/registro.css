@@ -3,6 +3,7 @@
     --error: #CC0000;
     --naranja: #FA7609;
     --blanco: #eee;
+    --okey: #00CC00;
     --amarillo: #F4C01E;
     --negro: #2F3237;
     --negroL1: #545961;
@@ -376,6 +377,61 @@ h4 span{
     top: 46.9%;
 
 }
+
+.contenedorOK{
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    z-index: 2; 
+    left: 35%;
+    top: 47%;
+    display: none;
+    
+}
+
+.iconOk{
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    left: 19%;
+    top: -21%;
+    
+}
+
+.contenedorOK img{
+    width: 100%;
+    height: 100%;
+}
+.texto-OK{
+    position: absolute;
+    top: 10%;
+    left: 14%;
+}
+
+.contenedorOK .texto-OK h1{
+    color: var(--okey);
+}
+
+.contenedorOKclick{
+    animation: registroOK 4s ease-out;
+    display: block;
+}
+
+@keyframes registroOK{
+    
+        0% { opacity: 0.1; }
+        100% { opacity: 1; }
+      }
+
+.registroOk{
+    animation: registroOpacity 4s ease-out;
+}
+
+@keyframes registroOpacity{
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+}
+
 
 
 

@@ -1,0 +1,9 @@
+.cardMoviendose{
+    animation: cardPerspective .5s ease-out;
+}
+
+@keyframes cardPerspective{
+    0% {perspective: 333px;}
+    50%{perspective: 666px;}
+    100%{perspective: 1000px;}
+}
