@@ -146,6 +146,8 @@
     z-index: 1;
     border-bottom-left-radius: 5px;
     border-top: 2px solid var(--blanco);
+    border-left: 2px solid var(--blanco);
+    border-bottom: 2px solid var(--blanco);
     
 }
 
