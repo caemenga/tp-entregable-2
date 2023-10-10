@@ -24,7 +24,7 @@ body{
     height: 40px;
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
     
     padding: 22.5px;
@@ -41,6 +41,12 @@ body{
     font-size: small;
     font-family: var(--robotoSerif);
     color: #eee;
+}
+.flechaBread{
+    color:#F4C01E;
+   
+    height: 30px;
+    z-index: 1;
 }
 
 
