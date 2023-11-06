@@ -90,8 +90,7 @@ class Celda {
     // Dibuja la celda en el contexto del canvas
     contexto.fillStyle = this.contieneFicha ? "#00F" : "#FFF"; // Color azul si contiene una ficha, blanco si no
     contexto.fillRect(this.x, this.y, this.ancho, this.alto);
-    contexto.strokeStyle = "#000";
-    contexto.strokeRect(this.x, this.y, this.ancho, this.alto);
+   
   }
 
   // Implementa una función para verificar si las coordenadas (x, y) están dentro de la celda
@@ -115,7 +114,9 @@ class Celda {
     for (let i = 0; i < arrayCeldas.length; i++) {
       const celda = arrayCeldas[i];
       if (celda.contienePunto(x, y)) {
+        //preguntar si es valido
         // La ficha se soltó sobre esta celda
+
         if (!celda.contieneFicha) {
           // Coloca la ficha en la celda si la celda está vacía
           celda.contieneFicha = true;
@@ -143,12 +144,8 @@ class CeldaTablero {
     this.alto = alto;
     this.ficha=null;
     this.contieneFicha = false;
-
-
-    canvas.addEventListener('mousedown', this.manejarMouseDown.bind(this));
-    canvas.addEventListener('mousemove', this.manejarMouseMove.bind(this));
-    canvas.addEventListener('mouseup', this.manejarMouseUp.bind(this));
   }
+
 
 }
 
