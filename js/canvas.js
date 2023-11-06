@@ -2,7 +2,8 @@ const canvas = document.getElementById('tablero');
 const contexto = canvas.getContext('2d');
 contexto.fillStyle = "#FFF"; // Color blanco
 contexto.fillRect(0, 0, canvas.width, canvas.height);
-
+let aux = 200;
+let aux2 = 100;
 class Ficha {
   constructor(r, c) {
     this.idJugador;
@@ -68,6 +69,56 @@ class Ficha {
   manejarMouseUp() {
     this.seleccionada = false;
 
+  }
+}
+class Tablero{
+  constructor(maxFilas, maxColumn){
+    this.tablero = [];
+    this.maxFilas = maxFilas;
+    this.maxColumn = maxColumn;
+
+    canvas.addEventListener('mousedown', this.manejarMouseDown.bind(this));
+    canvas.addEventListener('mousemove', this.manejarMouseMove.bind(this));
+    canvas.addEventListener('mouseup', this.manejarMouseUp.bind(this));
+
+  }
+  manejarMouseDown() {
+    this.dibujar(contexto);
+  }
+
+  manejarMouseMove(event) {
+    this.dibujar(contexto);
+  }
+
+  manejarMouseUp(event) {
+    this.dibujar(contexto);
+  }
+  crearTablero(){
+    for (let fila = 0; fila < 6; fila++) {
+      
+        this.tablero[fila] = [];
+        for(let column = 0; column < 7; column++){
+          if (fila == 0){
+            let nuevaCelda = new Celda(aux, aux2, 100, 100);
+            console.log(aux);
+            this.tablero[fila][column] = nuevaCelda;
+          }else{
+            let nuevaCelda = new CeldaTablero(aux, aux2, 100, 100);
+            this.tablero[fila][column] = nuevaCelda;
+          }
+          aux+=100;
+        }
+        aux=200;
+        aux2+=100;
+    }
+
+  }
+  dibujar(contexto){
+    for (let fila = 0; fila < 6; fila++) {
+        for(let column = 0; column < 7; column++){
+            this.tablero[fila][column].dibujar(contexto);
+        }
+    }
   }
 }
 
@@ -145,9 +196,16 @@ class CeldaTablero {
     this.contieneFicha = false;
 
 
-    canvas.addEventListener('mousedown', this.manejarMouseDown.bind(this));
-    canvas.addEventListener('mousemove', this.manejarMouseMove.bind(this));
-    canvas.addEventListener('mouseup', this.manejarMouseUp.bind(this));
+    // canvas.addEventListener('mousedown', this.manejarMouseDown.bind(this));
+    // canvas.addEventListener('mousemove', this.manejarMouseMove.bind(this));
+    // canvas.addEventListener('mouseup', this.manejarMouseUp.bind(this));
+  }
+
+  dibujar(contexto){
+    contexto.fillStyle = this.contieneFicha ? "#00F" : "#FFF"; // Color azul si contiene una ficha, blanco si no
+    contexto.fillRect(this.x, this.y, this.ancho, this.alto);
+    contexto.strokeStyle = "#000";
+    contexto.strokeRect(this.x, this.y, this.ancho, this.alto);
   }
 
 }
@@ -185,20 +243,10 @@ class CeldaTablero {
 let ficha = new Ficha(50, 'green');
 
 
-let arrayCeldas = [];
-let aux=400;
-let aux2=400;
-for (let i = 0; i < 5; i++) {
-  let nuevaCelda = new Celda(aux, aux2, 100, 100);
-  arrayCeldas.push(nuevaCelda);
-  aux+=100;
-}
-
-for (let i = 0; i < arrayCeldas.length; i++) {
-  arrayCeldas[i].dibujar(contexto);
-}
-
-
 ficha.dibujar(contexto);
 
 //dibujarTablero();
+
+let tablero = new Tablero(6,7);
+tablero.crearTablero();
+tablero.dibujar(contexto);
