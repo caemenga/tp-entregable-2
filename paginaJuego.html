@@ -36,6 +36,7 @@
         </div>
     </header>
     <div class="main">
+        
         <div class="menuCategorias">
             <ul class="iconosMenu">
                 <li><div class="iconCategoria">  <img class="iconM" src="icons/home.svg" alt=""></div> <div class="categoria"><p>Inicio</p></div></li>
@@ -108,41 +109,22 @@
             <img class="flechaBread" src="icons/flechaBread.svg" alt="">
             <p class="textoBreadcrum posicion" >4 en linea</p>
         </div>
+       
+       
+       
+       
+       
         <div class="contenedorJuego">
-            
+           
 
             <div class="contenedorPantallaJuego">
                 
-                <div class="contenedorPantalla4EnLinea">
-
-                    <div class="pantallaJuego">
-                        <img src="imgEntr2/clasicos/vs (1).png" alt="">
-                    </div>
-                    <div class="subPantallaJuego"></div>
-                </div>
+                <canvas id="tablero" width="1480" height="880"></canvas>
                 
-                <div class="instruccionesYControles">
-                    <div class="instrucciones">
-                        <p class="tituloIntrucciones">Intrucciones:</p>
-                        <ul class="listInstrucciones">
-                            <li class="itemListInstrucciones">Seleccionar un personaje
-                                para comenzar la partida</li>
-                            <li class="itemListInstrucciones">Elija un lugar correcto 
-                                                                para colocar su ficha</li>
-                        </ul>
-                        
-                    </div>
-                    <div class="controles">
-                        <p class="tituloIntrucciones">Controles:</p>
-                        <div class="conteinerControles">
-                            <img class="imagenMouse" src="icons/mouse.svg" alt="">
-                            <p class="textoControles" >Seleccionar lugar con click izquierdo </p>
-                        </div>
-                    </div>
-                </div>
-
+            
             </div>
 
+           
 
             <div class="informacionJuego">
                 <div class="imagenesJuego">
@@ -160,13 +142,25 @@
               
                 </div>
                 <div class="contenedorTextoJuego">
+                    <p class="textoTituloInformacion">Intrucciones:</p>
+                    <ul class="listInstrucciones">
+                        <li class="itemListInstrucciones">Seleccionar un personaje
+                            para comenzar la partida</li>
+                        <li class="itemListInstrucciones">Elija un lugar correcto 
+                                                            para colocar su ficha</li>
+                    </ul>
+                    
+                    
+                    
                     <h2 class="textoTituloInformacion">4 en Linea</h2>
                     <p class="textoJuego">
                         Un clásico de estrategia para jugar de a dos. El primero en colocar 4 fichas en linea ¡es el ganador! Las lineas pueden ser en vertical, horizontal o diagonal   
                     </p>
-                 </div>
+                    
+                </div>
             </div>
         </div>
+        
         <div class="contenedorCarruselChico">
             
             <div class="carruselChico">
@@ -328,5 +322,6 @@
     <script src="js/main.js"></script>
     <script src="js/menuHamburguesa.js"></script>
     <script src="js/menuPerfil.js"></script>
+    <script src="js/canvas.js"></script>
 </body>
 </html>
