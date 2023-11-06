@@ -105,6 +105,10 @@ body{
     border-bottom-right-radius: 10px;
     background-color: #0C121C;
     border: black solid 3px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .instruccionesYControles{
     width: 20%;
@@ -489,3 +493,37 @@ body{
     margin: 10px;
     border-radius: 20px;
 }
+
+.iconoPlayJuegoPantalla{
+    position: absolute;
+    z-index: 1;
+    width: 25%;
+    height: 25%;
+    cursor: pointer;
+}
+
+.imagenJuego{
+    opacity: 0.4;
+}
+
+.imagenSubJuego{
+    width: 10%;
+    height: 50%;
+}
+
+.subJuego1 h1{
+ position: relative;
+ right: 200%;
+ top: 15%;
+}
+
+.subJuego2 img{
+    height: 75%;
+    width: 75%;
+    position: relative;
+    left: 400%;
+    top: 15%;
+}
+
+
+

@@ -36,3 +36,5 @@ function moveLeft(index) {
     contenedoresPrincipales[index].style.transform = `translateX(${posiciones[index]}%)`;
   }
 }
+
+

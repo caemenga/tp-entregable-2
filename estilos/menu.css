@@ -168,6 +168,7 @@
 .categoriaPerfil p{
     color: var(--blanco);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .lineaPerfil{
