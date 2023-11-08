@@ -560,6 +560,13 @@ function buscarFicha(x,y){
   return null;
 }
 
+let imagenSrc = "C:/Users/caeme/OneDrive/Desktop/TUDAI/Interfaces/Entregable2/images/avatar.jpg";
+let imagenSrc2 = "C:/Users/caeme/OneDrive/Desktop/TUDAI/Interfaces/Entregable2/images/facebook.png";
+
+let fichasJ1 = []
+
+let fichasJ2 = []
+
 
 let tablero = null;
 let contador = 600;
@@ -567,7 +574,6 @@ let contador = 600;
 // console.log("contexto en canvas" + contexto);
 // tablero.dibujar(contexto);
 
-let cantidadFichas = 0;
 let espacioEntreFichas = 10;
 let cuatroEnLinea = document.getElementById("4enLinea");
 let cincoEnLinea = document.getElementById("5enLinea");
@@ -584,10 +590,9 @@ function jugar4enLinea(){
   console.log("entro en 4 en Linea!");
   tablero.dibujar(contexto);
 
-  cantidadFichas = 21;
-  espacioEntreFichas = 10;
   document.getElementById("modoJuego").style.display = "none";
   document.getElementById("pantallaJuego").classList.toggle("show");
+  crearPilas(21);
   setTimeout(contar, 1000);
 }
 
@@ -599,8 +604,7 @@ function jugar5enLinea(){
   tablero.dibujar(contexto);
   document.getElementById("modoJuego").style.display = "none";
   document.getElementById("pantallaJuego").classList.toggle("show");
-  cantidadFichas = 28;
-  espacioEntreFichas = 10;
+  crearPilas(28);
   setTimeout(contar, 1000);
 }
 
@@ -616,6 +620,7 @@ function jugar6enLinea(){
   espacioEntreFichas = 10;
   document.getElementById("modoJuego").style.display = "none";
   document.getElementById("pantallaJuego").classList.toggle("show");
+  crearPilas(36);
   setTimeout(contar, 1000);
 }
 
@@ -623,38 +628,35 @@ function jugar6enLinea(){
 
 
 
-let imagenSrc = "C:/Users/caeme/OneDrive/Desktop/TUDAI/Interfaces/Entregable2/images/avatar.jpg";
-let imagenSrc2 = "C:/Users/caeme/OneDrive/Desktop/TUDAI/Interfaces/Entregable2/images/facebook.png";
-
-let fichasJ1 = []
-
-let fichasJ2 = []
-let yJ1 = 400;
-let xJ1 = 100;
-let yJ2 = 400;
-let xJ2 = 1000;
-let ancho = 20;
-for (let i = 0; i < cantidadFichas; i++) {
-  yJ1-=espacioEntreFichas;
-  let ficha = new Ficha(1,xJ1, yJ1+i, 18, 'green', contexto, imagenSrc,ancho);
-  fichasJ1.push(ficha);
-}
-console.log("tamaño fichasJ1 = " +fichasJ1.length);
-fichasJ1.forEach(ficha => {
+function crearPilas(cantidadFichas){
+  let yJ1 = 400;
+  let xJ1 = 100;
+  let yJ2 = 400;
+  let xJ2 = 1000;
+  let ancho = 20;
+  for (let i = 0; i < cantidadFichas; i++) {
+    yJ1-=espacioEntreFichas;
+    let ficha = new Ficha(1,xJ1, yJ1+i, 18, 'green', contexto, imagenSrc,ancho);
+    fichasJ1.push(ficha);
+  }
+  console.log("tamaño fichasJ1 = " +fichasJ1.length);
+  fichasJ1.forEach(ficha => {
+    
+    ficha.dibujarApilado();
+  });
   
-  ficha.dibujarApilado();
-});
-
-
-for (let i = 0; i < cantidadFichas; i++) {
-  yJ2-=espacioEntreFichas;
-  let ficha = new Ficha(2,xJ2, yJ2+i, 18, 'green', contexto, imagenSrc2, ancho);
-  fichasJ2.push(ficha);
-}
-fichasJ2.forEach(ficha => {
   
-  ficha.dibujarApilado();
-});
+  for (let i = 0; i < cantidadFichas; i++) {
+    yJ2-=espacioEntreFichas;
+    let ficha = new Ficha(2,xJ2, yJ2+i, 18, 'green', contexto, imagenSrc2, ancho);
+    fichasJ2.push(ficha);
+  }
+  fichasJ2.forEach(ficha => {
+    
+    ficha.dibujarApilado();
+  });
+
+}
 
 // let ficha = new Ficha(100, 100, 18, 'green', contexto, imagenSrc, ancho);
 // ficha.dibujar();
@@ -696,7 +698,7 @@ function contar(){
     setTimeout(contar, 1000);
   } else {
     console.log("ENTRO EN CONTADOR = 0")
-    document.getElementById("btnreiniciarJuego").style.display = "block";
+    document.getElementById("reiniciarJuego").style.display = "block";
     document.getElementById("pantallaJuego").style.display = "none";
     
   }
