@@ -6,11 +6,13 @@ contexto.fillRect(0, 0, canvas.width, canvas.height);
 class Tablero{
   constructor(maxFilas, maxColumn, altoCelda, anchoCelda, radioCirculo){
     this.tablero = [];
+    this.xEnLinea=4;
     this.maxFilas = maxFilas;
     this.maxColumn = maxColumn;
     this.altoCelda = altoCelda;
     this.anchoCelda = anchoCelda;
     this.radioCirculo = radioCirculo;
+    this.idUltimaFicha;
     canvas.addEventListener('mousedown', this.manejarMouseDown.bind(this));
     canvas.addEventListener('mousemove', this.manejarMouseMove.bind(this));
     canvas.addEventListener('mouseup', this.manejarMouseUp.bind(this));
@@ -72,18 +74,18 @@ class Tablero{
         
 
         
-        console.log("fila"+fila);
-       
-        console.log("tablero1"+tablero.tablero[fila]);
+        
         if(tablero.tablero[fila][c].ficha==null){
           
-          console.log(fichaN);
+         
           fichaN.x=tablero.tablero[fila][c].x+fichaN.radio;
           fichaN.y=tablero.tablero[fila][c].y+fichaN.radio;
           tablero.tablero[fila][c].ficha=fichaN;
           tablero.tablero[fila][c].contieneFicha=true;
+          this.idUltimaFicha=fichaN.idJugador;
           b=true;
-          if(this.gano()){
+          let gano=this.gano(fila,c); 
+          if(gano){
             console.log("GANOOOO");
           }
           
@@ -108,13 +110,15 @@ class Tablero{
     }
     gano(f,c){
       let sumaDerecha = this.sumaDerecha(f,c);
-      let sumaIzquierda = this.sumaDerecha(f,c);
+      let sumaIzquierda = this.sumaIzquierda(f,c);
       let sumaDiagonalSuperiorDerecha = this.sumaDiagonalSuperiorDerecha(f,c);
       let sumaDiagonalSuperiorIzquierda = this.sumaDiagonalSuperiorIzquierda(f,c);
       let sumaDiagonalInferiorDerecha = this.sumaDiagonalInferiorDerecha(f,c);
       let sumaDiagonalInferiorIzquierda = this.sumaDiagonalInferiorIzquierda(f,c);
+      console.log("sumaDerecha "+sumaDerecha+" SumaIzuqierda "+sumaIzquierda);
 //      VER TEMA DEL XEN LINEA
-        if((sumaDerecha==4)||(sumaIzquierda==4)||((sumaDerecha+sumaIzquierda)>=4)||(sumaDiagonalSuperiorDerecha==4)||(sumaDiagonalSuperiorIzquierda==4)||(sumaDiagonalInferiorDerecha==4)||(sumaDiagonalInferiorIzquierda==4)||((sumaDiagonalSuperiorDerecha+sumaDiagonalInferiorIzquierda)>=4)||((sumaDiagonalSuperiorIzquierda+sumaDiagonalInferiorDerecha)>=4)){
+      if((sumaDerecha==this.xEnLinea)||(sumaIzquierda==this.xEnLinea)||((sumaDerecha+sumaIzquierda-1)>=this.xEnLinea)||(sumaDiagonalSuperiorDerecha==this.xEnLinea)||(sumaDiagonalSuperiorIzquierda==this.xEnLinea)||(sumaDiagonalInferiorDerecha==this.xEnLinea)||(sumaDiagonalInferiorIzquierda==this.xEnLinea)||((sumaDiagonalSuperiorDerecha+sumaDiagonalInferiorIzquierda-1)>=this.xEnLinea)||((sumaDiagonalSuperiorIzquierda+sumaDiagonalInferiorDerecha-1)>=this.xEnLinea)){
+
             return true;
         }
         return false;
@@ -126,80 +130,91 @@ class Tablero{
    
     sumaDiagonalSuperiorDerecha(f,c){
       let suma=1;
-      
-       while((c<this.maxColumn)&&(f<=0)&&(this.tablero[f--][c++].idJugador == this.tablero[f][c].idJugador)&&(suma>=4)){  //o x
+      let cAux=c+1;
+      let fAux=f-1;
+       while((cAux<this.maxColumn)&&(fAux<=0)&&(this.tablero[fAux][cAux].ficha!=null)&&(this.tablero[fAux][cAux].ficha.idJugador == this.tablero[f][c].ficha.idJugador)&&(suma<4)){  //o x
           suma++;
           c+=1;
-          fila-=1;
+          f-=1;
+          cAux+=1;
+          fAux-=1;
        }
         return suma;
     }
     sumaDiagonalInferiorIzquierda(f,c){
       let suma=1;
+      let cAux = c-1;
+      let fAux=f+1;
       
-       while((c>=0)&&(f<this.maxFilas)&&(this.tablero[f++][c--].idJugador == this.tablero[f][c].idJugador)&&(suma>=4)){  //o x
+       while((cAux>=0)&&(fAux<this.maxFilas)&&(this.tablero[fAux][cAux].ficha!=null)&&(this.tablero[fAux][cAux].ficha.idJugador == this.tablero[f][c].ficha.idJugador)&&(suma<4)){  //o x
           suma++;
           c-=1;
-          fila+=1;
+          f+=1;
+          cAux-=1;
+          fAux+=1;
        }
-      if(suma==4){
-        //implementar
-      }
-      else
-        return suma;
+       return suma;
+      
     }
     sumaDiagonalSuperiorIzquierda(f,c){
       let suma=1;
-      
-       while((c>=0)&&(f>=0)&&(this.tablero[f++][c++].idJugador == this.tablero[f][c].idJugador)&&(suma>=4)){  //o x
+      console.log("ficha "+this.tablero[f--][c--].ficha);
+      let cAux=c-1;
+      let fAux=f-1;
+
+       while((cAux>=0)&&(fAux>=0)&&(this.tablero[fAux][cAux].ficha!=null)&&(this.tablero[fAux][cAux].ficha.idJugador == this.tablero[f][c].ficha.idJugador)&&(suma<4)){  //o x
           suma++;
           c-=1;
-          fila-=1;
+          f-=1;
+          cAux-=1;
+          fAux-=1;
        }
-      if(suma==4){
-        //implementar
-      }
-      else
+     
         return suma;
-    }sumaDiagonalInferiorDerecha(f,c){
+    }
+    sumaDiagonalInferiorDerecha(f,c){
       let suma=1;
-      
-       while((c<this.maxColumn)&&(f<this.maxColumn)&&(c<this.maxColumn)&&(this.tablero[f++][c++].idJugador == this.tablero[f][c].idJugador)&&(suma>=4)){  //o x
+      let cAux = c+1;
+      let fAux= f+1;
+     
+     
+
+       while((cAux<(this.maxColumn-1))&&(fAux<this.maxColumn-1)&&(this.tablero[fAux][cAux].ficha!=null)&&(this.tablero[fAux][cAux].ficha.idJugador == this.tablero[f][c].ficha.idJugador)&&(suma<4)){  //o x
           suma++;
           c+=1;
-          fila+=1;
+          f+=1;
+          cAux+=1;
+          fAux+=1;
        }
-      if(suma==4){
-        //implementar
-      }
-      else
-        return suma;
+       return suma;
+      
     }
     sumaDerecha(f,c){
       let suma=1;
+      let cAux= c+1;
       
-       while((c<this.maxColumn)&&(this.tablero[f][c++].idJugador == this.tablero[f][c].idJugador)&&(suma>=4)){  //o x
+       while((cAux<this.maxColumn)&&(this.tablero[f][cAux].ficha!=null)&&(this.tablero[f][cAux].ficha.idJugador == this.tablero[f][c].ficha.idJugador)&&(suma<4)){  //o x
           suma++;
-          c-=1;
+          c+=1;
+          cAux=cAux+1;
        }
-      if(suma==4){
-        //implementar
-      }
-      else
+      
         return suma;
+      
     }
     sumaIzquierda(f,c){
       let suma=1;
+      let cAux=c-1;
       
-       while((c>0)&&(this.tablero[f][c--].idJugador == this.tablero[f][c].idJugador)&&(suma>=4)){  //o x
-          suma++;
+
+
+      while((cAux>=0)&&(this.tablero[f][cAux].ficha!=null)&&(this.tablero[f][cAux].ficha.idJugador == this.tablero[f][c].ficha.idJugador)&&(suma<4)){  //o x
+          suma+=1;
           c-=1;
+          cAux=cAux-1;
        }
-      if(suma==4){
-        //implementar
-      }
-      else
-        return suma;
+      
+      return suma;
     }
     coincideConCelda(x,y){
       for (let i = 0; i <= this.tablero.length; i++) {
@@ -211,35 +226,9 @@ class Tablero{
       return false;
     }
     esMiTurno(fichaMetodo){
-      let fichasJugador1=0;
-      let fichasJugador2=0;
-      for (let index = 0; index < this.tablero.length; index++) {
-          for (let c = 0; c < this.maxColumn; c++) {
-            if((this.tablero[index][c].ficha!=null)){
-              if(this.tablero[index][c].ficha.idJugador == fichaMetodo.idJugador){
-                fichasJugador1++;
-                console.log("fichasJ1"+fichasJugador1)
-              }
-              else{
-                fichasJugador2++;
-                console.log("fichasJugador2"+fichasJugador1)
-              }
-            }
-            
-            
-          }
-        
-      }
-      console.log("fichasJ1"+fichasJugador1);
-      console.log("fichasJ2"+fichasJugador2);
-      console.log("id jugador"+fichaMetodo.idJugador);
-      if (fichaMetodo.idJugador==2) {
-        return fichasJugador1<fichasJugador2;
-      }
-      else{
-        return fichasJugador1=fichasJugador2;
-      }
+      return fichaMetodo.idJugador!=this.idUltimaFicha;
     }
+
     estaVacio(){
       for (let index = 0; index < this.tablero.length; index++) {
         for (let c = 0; c < this.maxColumn; c++) {
@@ -247,10 +236,7 @@ class Tablero{
             if(this.tablero[index][c].ficha!=null){
               return false;
             }
-            
-            
-          
-          
+         
         }
       
     }
@@ -341,11 +327,11 @@ class Tablero{
           Math.pow(mouseX - this.x, 2) + Math.pow(mouseY - this.y, 2)
         );
     
-        if (distanciaAlCentro <= this.radio) {
+        if ((distanciaAlCentro <= this.radio)&&(this.x=this.xInicial)) {
           let b=this.esMiTurno();
-          console.log("turno"+b);
+          
           let b2=tablero.estaVacio(); 
-          console.log("vacio"+b2);
+          
           if(b||b2){
             this.seleccionada = true; 
           }
@@ -353,8 +339,7 @@ class Tablero{
         }
         
         
-        this.dibujar();
-        this.dibujarApilado;    
+            
         tablero.dibujar(contexto);
       }
 
@@ -371,9 +356,10 @@ class Tablero{
           const rect = canvas.getBoundingClientRect();
           this.x = event.clientX - rect.left;
           this.y = event.clientY - rect.top;
-          this.dibujar(contexto);
-
+          
         }
+        this.dibujar();
+        this.dibujarApilado();
         tablero.dibujar(contexto);
          
       }
@@ -385,15 +371,18 @@ class Tablero{
         const mouseY = event.clientY - rect.top;
         if(tablero.coincideConCelda(mouseX,mouseY)){
           this.seleccionada = false;
-
         }
         else{
-          this.seleccionada = false;
-          this.setXYInicial();
+          
+            this.seleccionada = false;
+            this.setXYInicial();
+            this.dibujar();
         }
+        this.dibujar();
+        this.dibujarApilado();
         
-          this.dibujar();
-          this.dibujarApilado();  
+        
+            
       }
     
       setXYInicial(){
@@ -534,7 +523,34 @@ class CeldaTablero {
       contexto.closePath();
     }
     else{
+      contexto.fillStyle = "#500487"; // Color de celda blanca
+      contexto.fillRect(this.x, this.y, this.ancho, this.alto);
+    
+      // Dibuja un borde para resaltar las celdas
+      contexto.strokeStyle = "#000000";
+      contexto.strokeRect(this.x, this.y, this.ancho, this.alto);
+      // Dibuja un círculo en la celda (por ejemplo, en la fila 2, columna 3)
+      
+      contexto.beginPath();
+      contexto.arc(
+        this.x + this.ancho / 2,
+        this.y + this.alto / 2,
+        this.radioCirculo,
+        0,
+        2 * Math.PI
+      );
+      
+      contexto.fillStyle = "#ffffff"; // Cambia el color del relleno del círculo a blanco
+      contexto.fill();
+    
+      contexto.strokeStyle = "#00000"; // Cambia el color del trazo del círculo a blanco
+      contexto.stroke();
+      contexto.closePath();
+      this.ficha.x=this.x + this.ancho / 2;
+      this.ficha.y=this.y + this.ancho / 2;
+
       this.ficha.dibujar();
+      
     }
   }
 }
@@ -543,6 +559,7 @@ class CeldaTablero {
 function buscarFicha(x,y){
   for (let i = 0; i < fichasJ1.length; i++) {
     const ficha = fichasJ1[i];
+    console.log("entra a buscafchia");
     if (ficha.contienePunto(x, y)) {
       return ficha; // Se encontró la ficha en el primer arreglo
     }
@@ -563,7 +580,7 @@ function buscarFicha(x,y){
 
 let tablero = new Tablero(6,7, 60, 60, 18);
 tablero.crearTablero();
-console.log("contexto en canvas" + contexto);
+
 tablero.dibujar(contexto);
 
 let cantidadFichas = 10;
@@ -584,7 +601,7 @@ for (let i = 0; i < cantidadFichas; i++) {
   let ficha = new Ficha(1,xJ1, yJ1+i, 18, 'green', contexto, imagenSrc,ancho);
   fichasJ1.push(ficha);
 }
-console.log("tamaño fichasJ1 = " +fichasJ1.length);
+
 fichasJ1.forEach(ficha => {
   
   ficha.dibujarApilado();
