@@ -4,9 +4,9 @@ contexto.fillStyle = "#FFF"; // Color blanco
 contexto.fillRect(0, 0, canvas.width, canvas.height);
 
 class Tablero{
-  constructor(maxFilas, maxColumn, altoCelda, anchoCelda, radioCirculo){
+  constructor(xenlinea,maxFilas, maxColumn, altoCelda, anchoCelda, radioCirculo){
     this.tablero = [];
-    this.xEnLinea=4;
+    this.xEnLinea=xenlinea;
     this.maxFilas = maxFilas;
     this.maxColumn = maxColumn;
     this.altoCelda = altoCelda;
@@ -220,12 +220,12 @@ class Tablero{
     }
     sumaArriba(f,c){
       let suma=1;
-      let fAux= c+1;
-      
-       while((fAux<this.maxFilas)&&(this.tablero[fAux][c].ficha!=null)&&(this.tablero[fAux][c].ficha.idJugador == this.tablero[f][c].ficha.idJugador)&&(suma<4)){  //o x
+      let fAux= c-1;
+      console.log("f y c "+f+c);
+       while((fAux>=0)&&(this.tablero[fAux][c].ficha!=null)&&(this.tablero[fAux][c].ficha.idJugador == this.tablero[f][c].ficha.idJugador)&&(suma<4)){  //o x
           suma++;
-          f+=1;
-          fAux=fAux+1;
+          f-=1;
+          fAux-=1;
        }
       
         return suma;
@@ -233,12 +233,12 @@ class Tablero{
     }
     sumaAbajo(f,c){
       let suma=1;
-      let fAux= c-1;
+      let fAux= c+1;
       
        while((fAux<this.maxFilas)&&(this.tablero[fAux][c].ficha!=null)&&(this.tablero[fAux][c].ficha.idJugador == this.tablero[f][c].ficha.idJugador)&&(suma<4)){  //o x
           suma++;
-          f-=1;
-          fAux=fAux-1;
+          f+=1;
+          fAux=fAux+1;
        }
       
         return suma;
@@ -605,8 +605,8 @@ function buscarFicha(x,y){
   return null;
 }
 
-let imagenSrc = "C:/Users/caeme/OneDrive/Desktop/TUDAI/Interfaces/Entregable2/images/avatar.jpg";
-let imagenSrc2 = "C:/Users/caeme/OneDrive/Desktop/TUDAI/Interfaces/Entregable2/images/facebook.png";
+let imagenSrc = "images/avatar.jpg";
+let imagenSrc2 = "images/facebook.png";
 
 let fichasJ1 = []
 
@@ -630,7 +630,7 @@ seisEnLinea.addEventListener("click", jugar6enLinea);
 
 
 function jugar4enLinea(){
-  tablero = new Tablero(6,7, 60, 60, 18);
+  tablero = new Tablero(4,6,7, 60, 60, 18);
   tablero.crearTablero();
   console.log("entro en 4 en Linea!");
   tablero.dibujar(contexto);
@@ -643,7 +643,7 @@ function jugar4enLinea(){
 
 function jugar5enLinea(){
   console.log("entro en 5 en Linea!");
-  tablero = new Tablero(7,8, 60, 60, 18);
+  tablero = new Tablero(5,7,8, 60, 60, 18);
   tablero.crearTablero();
   console.log("contexto en canvas" + contexto);
   tablero.dibujar(contexto);
@@ -655,7 +655,7 @@ function jugar5enLinea(){
 
 function jugar6enLinea(){
   console.log("entro en 7 en Linea!");
-  tablero = new Tablero(8,9, 60, 60, 18);
+  tablero = new Tablero(6,8,9, 60, 60, 18);
   tablero.crearTablero();
   console.log("contexto en canvas" + contexto);
   tablero.dibujar(contexto);
@@ -684,7 +684,7 @@ function crearPilas(cantidadFichas){
     let ficha = new Ficha(1,xJ1, yJ1+i, 18, 'green', contexto, imagenSrc,ancho);
     fichasJ1.push(ficha);
   }
-  console.log("tamaño fichasJ1 = " +fichasJ1.length);
+  
   fichasJ1.forEach(ficha => {
     
     ficha.dibujarApilado();
