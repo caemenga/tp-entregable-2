@@ -57,8 +57,8 @@ class Tablero{
     }
   }
     dibujar(contexto){
-      for (let fila = 0; fila < 6; fila++) {
-          for(let column = 0; column < 7; column++){
+      for (let fila = 0; fila < this.maxFilas; fila++) {
+          for(let column = 0; column < this.maxColumn; column++){
 
               this.tablero[fila][column].dibujar(contexto);
 
@@ -578,15 +578,70 @@ function buscarFicha(x,y){
 }
 
 
-let tablero = new Tablero(6,7, 60, 60, 18);
-tablero.crearTablero();
-
-tablero.dibujar(contexto);
+let tablero = null;
+let contador = 10;
+// tablero.crearTablero();
+// console.log("contexto en canvas" + contexto);
+// tablero.dibujar(contexto);
 
 let cantidadFichas = 10;
 let espacioEntreFichas = 10;
-let imagenSrc = "C:/Users/fvg/Desktop/tp-entregable-2/images/avatar.jpg";
-let imagenSrc2 = "C:/Users/fvg/Desktop/tp-entregable-2/images/facebook.png";
+let cuatroEnLinea = document.getElementById("4enLinea");
+let cincoEnLinea = document.getElementById("5enLinea");
+let sieteEnLinea = document.getElementById("7enLinea"); 
+
+cuatroEnLinea.addEventListener("click", jugar4enLinea);
+cincoEnLinea.addEventListener("click", jugar5enLinea);
+sieteEnLinea.addEventListener("click", jugar7enLinea);
+
+
+function jugar4enLinea(){
+  tablero = new Tablero(6,7, 60, 60, 18);
+  tablero.crearTablero();
+  console.log("entro en 4 en Linea!");
+  tablero.dibujar(contexto);
+
+  cantidadFichas = 10;
+  espacioEntreFichas = 10;
+  document.getElementById("modoJuego").style.display = "none";
+  document.getElementById("pantallaJuego").classList.toggle("show");
+  setTimeout(contar, 1000);
+}
+
+function jugar5enLinea(){
+  console.log("entro en 5 en Linea!");
+  tablero = new Tablero(7,8, 60, 60, 18);
+  tablero.crearTablero();
+  console.log("contexto en canvas" + contexto);
+  tablero.dibujar(contexto);
+  document.getElementById("modoJuego").style.display = "none";
+  document.getElementById("pantallaJuego").classList.toggle("show");
+  cantidadFichas = 10;
+  espacioEntreFichas = 10;
+  setTimeout(contar, 1000);
+}
+
+function jugar7enLinea(){
+  console.log("entro en 7 en Linea!");
+  tablero = new Tablero(8,9, 60, 60, 18);
+  tablero.crearTablero();
+  console.log("contexto en canvas" + contexto);
+  tablero.dibujar(contexto);
+
+
+  cantidadFichas = 10;
+  espacioEntreFichas = 10;
+  document.getElementById("modoJuego").style.display = "none";
+  document.getElementById("pantallaJuego").classList.toggle("show");
+  setTimeout(contar, 1000);
+}
+
+
+
+
+
+let imagenSrc = "C:/Users/caeme/OneDrive/Desktop/TUDAI/Interfaces/Entregable2/images/avatar.jpg";
+let imagenSrc2 = "C:/Users/caeme/OneDrive/Desktop/TUDAI/Interfaces/Entregable2/images/facebook.png";
 
 let fichasJ1 = []
 
@@ -622,6 +677,36 @@ fichasJ2.forEach(ficha => {
 // ficha.dibujar();
 
 
+
+
+ 
+let botonJugar = document.getElementById("botonJugar");
+
+botonJugar.addEventListener('click', jugar);
+
+function jugar(){
+  document.getElementById("pantallaPreJuego").style.display = "none";
+  console.log(document.getElementById("pantallaJuego"));
+  document.getElementById("modoJuego").style.visibility = "visible";
+  
+}
+
+
+
+
+function contar(){
+  console.log("ENTRO EN CONTAR");
+  contador--;
+  if (contador >= 0){
+   console.log("Entro a contador > 0");
+    // Llama a la función nuevamente después de 1 segundo
+    setTimeout(contar, 1000);
+  } else {
+    console.log("ENTRO EN CONTADOR = 0")
+    document.getElementById("btnreiniciarJuego").style.display = "block";
+    document.getElementById("pantallaJuego").style.display = "none";
+  }
+}
 
 
 
