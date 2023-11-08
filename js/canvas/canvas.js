@@ -90,12 +90,12 @@ class Tablero{
             const ancho = canvas.height;
             const X = canvas.width / 2;
             const Y = canvas.height / 2;
-            contexto.fillStyle ="black";
+            contexto.fillStyle ="white";
             contexto.clearRect(0,0,largo,ancho);
             contexto.fillRect(0,0,largo,ancho);
-            contexto.fillStyle = 'black';
+            contexto.fillStyle = 'blue';
             contexto.font = '30px Arial';
-            contexto.fillText("GANO EL JUGADOR " + fichaN.idJugador, X, Y);
+            contexto.fillText("GANO EL JUGADOR " + fichaN.idJugador, 50, 50);
             console.log("GANOOOO");
           }
           
@@ -468,13 +468,13 @@ class Celda {
 
   dibujar( contexto) {
     
-    // Dibuja la celda en el contexto del canvas
-    contexto.fillStyle = "#FFFFFF"; // Color de celda blanca
-    contexto.fillRect(this.x, this.y, this.ancho, this.alto);
-    // Dibuja un borde para resaltar las celdas
-    contexto.strokeStyle = "#000000";
-    contexto.strokeRect(this.x, this.y, this.ancho, this.alto);
-    // Dibuja un círculo en la celda (por ejemplo, en la fila 2, columna 3)
+    // // Dibuja la celda en el contexto del canvas
+    // contexto.fillStyle = "#FFFFFF"; // Color de celda blanca
+    // contexto.fillRect(this.x, this.y, this.ancho, this.alto);
+    // // Dibuja un borde para resaltar las celdas
+    // contexto.strokeStyle = "#000000";
+    // contexto.strokeRect(this.x, this.y, this.ancho, this.alto);
+    // // Dibuja un círculo en la celda (por ejemplo, en la fila 2, columna 3)
      
     contexto.beginPath();
     contexto.arc(
