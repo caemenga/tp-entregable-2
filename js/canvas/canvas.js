@@ -579,7 +579,7 @@ function buscarFicha(x,y){
 
 
 let tablero = null;
-let contador = 10;
+let contador = 100;
 // tablero.crearTablero();
 // console.log("contexto en canvas" + contexto);
 // tablero.dibujar(contexto);
@@ -640,8 +640,8 @@ function jugar7enLinea(){
 
 
 
-let imagenSrc = "C:/Users/caeme/OneDrive/Desktop/TUDAI/Interfaces/Entregable2/images/avatar.jpg";
-let imagenSrc2 = "C:/Users/caeme/OneDrive/Desktop/TUDAI/Interfaces/Entregable2/images/facebook.png";
+let imagenSrc = "C:/Users/fvg/Desktop/tp-entregable-2/images/avatar.jpg";
+let imagenSrc2 = "C:/Users/fvg/Desktop/tp-entregable-2/images/facebook.png";
 
 let fichasJ1 = []
 
