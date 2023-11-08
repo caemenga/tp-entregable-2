@@ -86,6 +86,16 @@ class Tablero{
           b=true;
           let gano=this.gano(fila,c); 
           if(gano){
+            const largo = canvas.width;
+            const ancho = canvas.height;
+            const X = canvas.width / 2;
+            const Y = canvas.height / 2;
+            contexto.fillStyle ="black";
+            contexto.clearRect(0,0,largo,ancho);
+            contexto.fillRect(0,0,largo,ancho);
+            contexto.fillStyle = 'black';
+            contexto.font = '30px Arial';
+            contexto.fillText("GANO EL JUGADOR " + fichaN.idJugador, X, Y);
             console.log("GANOOOO");
           }
           
@@ -312,7 +322,15 @@ class Tablero{
         let altura = ancho / aspecto;
         const patron = this.contexto.createPattern(this.imagen, "no-repeat");
           this.contexto.fillStyle = patron;
+        
+          this.contexto.strokeStyle = "#FF0000"; // Color del círculo (rojo en este caso)
+        this.contexto.stroke();
+        this.contexto.shadowBlur = 5;
+        this.contexto.shadowColor = "rgba(0, 0, 0, 0.8)";
+        this.contexto.fill();
     
+          // Restablece las sombras para futuros dibujos
+        this.contexto.shadowBlur = 0;
         //dibuja
         this.contexto.drawImage(this.imagen, this.x - ancho / 2, this.y - altura / 2, ancho, altura);
           
@@ -387,7 +405,7 @@ class Tablero{
           
         }
         this.dibujar();
-        this.dibujarApilado();
+        
         tablero.dibujar(contexto);
          
       }
@@ -407,7 +425,7 @@ class Tablero{
             this.dibujar();
         }
         this.dibujar();
-        this.dibujarApilado();
+        
         
         
             
@@ -605,8 +623,9 @@ function buscarFicha(x,y){
   return null;
 }
 
-let imagenSrc = "images/avatar.jpg";
-let imagenSrc2 = "images/facebook.png";
+let imagenBoca = "images/juego/bocaJr.jpg";
+let imagenRiver = "images/juego/River-plate.jpg";
+let imagenRacing = "images/juego/Racing-club.jpg";
 
 let fichasJ1 = []
 
@@ -681,24 +700,24 @@ function crearPilas(cantidadFichas){
   let ancho = 20;
   for (let i = 0; i < cantidadFichas; i++) {
     yJ1-=espacioEntreFichas;
-    let ficha = new Ficha(1,xJ1, yJ1+i, 18, 'green', contexto, imagenSrc,ancho);
+    let ficha = new Ficha(1,xJ1, yJ1+i, 18, 'green', contexto, imagenBoca,ancho);
     fichasJ1.push(ficha);
   }
   
   fichasJ1.forEach(ficha => {
     
-    ficha.dibujarApilado();
+    ficha.dibujar();
   });
   
   
   for (let i = 0; i < cantidadFichas; i++) {
     yJ2-=espacioEntreFichas;
-    let ficha = new Ficha(2,xJ2, yJ2+i, 18, 'green', contexto, imagenSrc2, ancho);
+    let ficha = new Ficha(2,xJ2, yJ2+i, 18, 'green', contexto, imagenRiver, ancho);
     fichasJ2.push(ficha);
   }
   fichasJ2.forEach(ficha => {
     
-    ficha.dibujarApilado();
+    ficha.dibujar();
   });
 
 }
