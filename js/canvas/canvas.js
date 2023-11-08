@@ -1,7 +1,14 @@
 const canvas = document.getElementById('tablero');
 const contexto = canvas.getContext('2d');
-contexto.fillStyle = "#FFF"; // Color blanco
-contexto.fillRect(0, 0, canvas.width, canvas.height);
+
+const imagenDeFondo = new Image();
+imagenDeFondo.src = 'images/juego/cancha.jpg'; // Reemplaza con la ruta de tu imagen
+imagenDeFondo.onload = function() {
+  // Dibujar la imagen de fondo en el canvas
+  contexto.drawImage(imagenDeFondo, 0, 0, canvas.width, canvas.height);
+}
+// contexto.fillStyle = "#FFF"; // Color blanco
+// contexto.fillRect(0, 0, canvas.width, canvas.height);
 
 class Tablero{
   constructor(xenlinea,maxFilas, maxColumn, altoCelda, anchoCelda, radioCirculo){
