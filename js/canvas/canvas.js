@@ -562,20 +562,20 @@ function buscarFicha(x,y){
 
 
 let tablero = null;
-let contador = 10;
+let contador = 600;
 // tablero.crearTablero();
 // console.log("contexto en canvas" + contexto);
 // tablero.dibujar(contexto);
 
-let cantidadFichas = 10;
+let cantidadFichas = 0;
 let espacioEntreFichas = 10;
 let cuatroEnLinea = document.getElementById("4enLinea");
 let cincoEnLinea = document.getElementById("5enLinea");
-let sieteEnLinea = document.getElementById("7enLinea"); 
+let seisEnLinea = document.getElementById("7enLinea"); 
 
 cuatroEnLinea.addEventListener("click", jugar4enLinea);
 cincoEnLinea.addEventListener("click", jugar5enLinea);
-sieteEnLinea.addEventListener("click", jugar7enLinea);
+seisEnLinea.addEventListener("click", jugar6enLinea);
 
 
 function jugar4enLinea(){
@@ -584,7 +584,7 @@ function jugar4enLinea(){
   console.log("entro en 4 en Linea!");
   tablero.dibujar(contexto);
 
-  cantidadFichas = 10;
+  cantidadFichas = 21;
   espacioEntreFichas = 10;
   document.getElementById("modoJuego").style.display = "none";
   document.getElementById("pantallaJuego").classList.toggle("show");
@@ -599,12 +599,12 @@ function jugar5enLinea(){
   tablero.dibujar(contexto);
   document.getElementById("modoJuego").style.display = "none";
   document.getElementById("pantallaJuego").classList.toggle("show");
-  cantidadFichas = 10;
+  cantidadFichas = 28;
   espacioEntreFichas = 10;
   setTimeout(contar, 1000);
 }
 
-function jugar7enLinea(){
+function jugar6enLinea(){
   console.log("entro en 7 en Linea!");
   tablero = new Tablero(8,9, 60, 60, 18);
   tablero.crearTablero();
@@ -612,7 +612,7 @@ function jugar7enLinea(){
   tablero.dibujar(contexto);
 
 
-  cantidadFichas = 10;
+  cantidadFichas = 36;
   espacioEntreFichas = 10;
   document.getElementById("modoJuego").style.display = "none";
   document.getElementById("pantallaJuego").classList.toggle("show");
@@ -678,7 +678,17 @@ function jugar(){
 
 
 function contar(){
+
+
   console.log("ENTRO EN CONTAR");
+  const X = canvas.width / 2;
+  const Y = 30;
+  contexto.fillStyle ="white";
+  contexto.clearRect(X,Y,50,-40);
+  contexto.fillRect(X,Y,50,-40);
+  contexto.fillStyle = 'black';
+  contexto.font = '30px Arial';
+  contexto.fillText(contador, X, Y);
   contador--;
   if (contador >= 0){
    console.log("Entro a contador > 0");
@@ -688,6 +698,7 @@ function contar(){
     console.log("ENTRO EN CONTADOR = 0")
     document.getElementById("btnreiniciarJuego").style.display = "block";
     document.getElementById("pantallaJuego").style.display = "none";
+    
   }
 }
 
