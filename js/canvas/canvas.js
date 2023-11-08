@@ -69,11 +69,12 @@ class Tablero{
 
     ubicarFicha(x,y,fichaN){
       let c = this.getColumna(x,y);
+      
       let b = false;
-      for (let fila = 5; fila > 0; fila--){
+      for (let fila = this.xEnLinea+1; fila > 0; fila--){
         
 
-        
+        console.log("tablero.tablero[fila][c] "+this.tablero[fila][c]);
         
         if(tablero.tablero[fila][c].ficha==null){
           
@@ -420,7 +421,7 @@ class Tablero{
           this.seleccionada = false;
         }
         else{
-          
+            
             this.seleccionada = false;
             this.setXYInicial();
             this.dibujar();
@@ -675,7 +676,7 @@ function jugar5enLinea(){
 
 function jugar6enLinea(){
   console.log("entro en 7 en Linea!");
-  tablero = new Tablero(6,8,9, 60, 60, 18);
+  tablero = new Tablero(7,9,10, 60, 60, 18);
   tablero.crearTablero();
   console.log("contexto en canvas" + contexto);
   tablero.dibujar(contexto);
@@ -747,8 +748,8 @@ function jugar(){
 function contar(){
 
 
-  console.log("ENTRO EN CONTAR");
-  const X = canvas.width / 2;
+  
+  const X = (canvas.width / 2)+500;
   const Y = 30;
   contexto.fillStyle ="white";
   contexto.clearRect(X,Y,50,-40);
@@ -758,11 +759,11 @@ function contar(){
   contexto.fillText(contador, X, Y);
   contador--;
   if (contador >= 0){
-   console.log("Entro a contador > 0");
+  
     // Llama a la función nuevamente después de 1 segundo
     setTimeout(contar, 1000);
   } else {
-    console.log("ENTRO EN CONTADOR = 0")
+    
     document.getElementById("reiniciarJuego").style.display = "block";
     document.getElementById("pantallaJuego").style.display = "none";
     
