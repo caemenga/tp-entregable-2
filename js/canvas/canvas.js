@@ -111,13 +111,15 @@ class Tablero{
     gano(f,c){
       let sumaDerecha = this.sumaDerecha(f,c);
       let sumaIzquierda = this.sumaIzquierda(f,c);
+      let sumaArriba = this.sumaArriba(f,c);
+      let sumaAbajo = this.sumaAbajo(f,c);
       let sumaDiagonalSuperiorDerecha = this.sumaDiagonalSuperiorDerecha(f,c);
       let sumaDiagonalSuperiorIzquierda = this.sumaDiagonalSuperiorIzquierda(f,c);
       let sumaDiagonalInferiorDerecha = this.sumaDiagonalInferiorDerecha(f,c);
       let sumaDiagonalInferiorIzquierda = this.sumaDiagonalInferiorIzquierda(f,c);
       console.log("sumaDerecha "+sumaDerecha+" SumaIzuqierda "+sumaIzquierda);
 //      VER TEMA DEL XEN LINEA
-      if((sumaDerecha==this.xEnLinea)||(sumaIzquierda==this.xEnLinea)||((sumaDerecha+sumaIzquierda-1)>=this.xEnLinea)||(sumaDiagonalSuperiorDerecha==this.xEnLinea)||(sumaDiagonalSuperiorIzquierda==this.xEnLinea)||(sumaDiagonalInferiorDerecha==this.xEnLinea)||(sumaDiagonalInferiorIzquierda==this.xEnLinea)||((sumaDiagonalSuperiorDerecha+sumaDiagonalInferiorIzquierda-1)>=this.xEnLinea)||((sumaDiagonalSuperiorIzquierda+sumaDiagonalInferiorDerecha-1)>=this.xEnLinea)){
+      if(((sumaAbajo+sumaArriba-1)>=this.xEnLinea)||(sumaAbajo==this.xEnLinea)||(sumaArriba==this.xEnLinea)||(sumaDerecha==this.xEnLinea)||(sumaIzquierda==this.xEnLinea)||((sumaDerecha+sumaIzquierda-1)>=this.xEnLinea)||(sumaDiagonalSuperiorDerecha==this.xEnLinea)||(sumaDiagonalSuperiorIzquierda==this.xEnLinea)||(sumaDiagonalInferiorDerecha==this.xEnLinea)||(sumaDiagonalInferiorIzquierda==this.xEnLinea)||((sumaDiagonalSuperiorDerecha+sumaDiagonalInferiorIzquierda-1)>=this.xEnLinea)||((sumaDiagonalSuperiorIzquierda+sumaDiagonalInferiorDerecha-1)>=this.xEnLinea)){
 
             return true;
         }
@@ -215,6 +217,32 @@ class Tablero{
        }
       
       return suma;
+    }
+    sumaArriba(f,c){
+      let suma=1;
+      let fAux= c+1;
+      
+       while((fAux<this.maxFilas)&&(this.tablero[fAux][c].ficha!=null)&&(this.tablero[fAux][c].ficha.idJugador == this.tablero[f][c].ficha.idJugador)&&(suma<4)){  //o x
+          suma++;
+          f+=1;
+          fAux=fAux+1;
+       }
+      
+        return suma;
+      
+    }
+    sumaAbajo(f,c){
+      let suma=1;
+      let fAux= c-1;
+      
+       while((fAux<this.maxFilas)&&(this.tablero[fAux][c].ficha!=null)&&(this.tablero[fAux][c].ficha.idJugador == this.tablero[f][c].ficha.idJugador)&&(suma<4)){  //o x
+          suma++;
+          f-=1;
+          fAux=fAux-1;
+       }
+      
+        return suma;
+      
     }
     coincideConCelda(x,y){
       for (let i = 0; i <= this.tablero.length; i++) {
